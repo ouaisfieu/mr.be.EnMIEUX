@@ -3,419 +3,485 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LE RENOUVEAU | Pour une Belgique qui nous ressemble</title>
-    <meta name="description" content="Le Renouveau est un mouvement politique belge qui porte une vision radicale et ambitieuse pour transformer notre société. Rejoignez-nous.">
-    <meta name="keywords" content="politique, Belgique, mouvement, réforme, citoyens, démocratie">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="LE RENOUVEAU | Pour une Belgique qui nous ressemble">
-    <meta property="og:description" content="Un mouvement politique qui porte une vision radicale et ambitieuse pour transformer notre société.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_BE">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon fill='%23f59e0b' points='50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='%230a1628' font-weight='bold'>R</text></svg>">
-    
+    <title>MR EN MIEUX - Le Mouvement Radical</title>
+    <meta name="description" content="MR EN MIEUX - Le Mouvement Radical. Pour une politique authentique, transparente et au service des citoyens.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Hero Home Specific */
+        .hero-home {
+            position: relative;
+            min-height: 90vh;
+            background: linear-gradient(135deg, var(--mr-blue) 0%, var(--mr-blue-dark) 100%);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.05;
+            background-image: 
+                radial-gradient(circle at 20% 80%, var(--mr-white) 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, var(--mr-white) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-home .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 85px;
+            font-weight: 800;
+            color: var(--mr-white);
+            line-height: 0.95;
+            margin-bottom: 15px;
+            letter-spacing: -3px;
+        }
+
+        .hero-text h1 span {
+            display: block;
+            font-size: 95px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .hero-desc {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 35px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-card {
+            background: var(--mr-white);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            transform: rotate(2deg);
+        }
+
+        .hero-card-badge {
+            display: inline-block;
+            background: var(--mr-blue);
+            color: var(--mr-white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .hero-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--mr-text);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .hero-card p {
+            color: var(--mr-gray);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .hero-card-footer {
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-card-avatar {
+            width: 42px;
+            height: 42px;
+            background: var(--mr-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mr-white);
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .hero-card-author {
+            font-size: 13px;
+        }
+
+        .hero-card-author strong {
+            display: block;
+            color: var(--mr-text);
+        }
+
+        .hero-card-author span {
+            color: var(--mr-gray);
+            font-size: 12px;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-home .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 55px;
+            }
+
+            .hero-text h1 span {
+                font-size: 65px;
+            }
+
+            .hero-desc {
+                margin: 0 auto 35px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .hero-text h1 span {
+                font-size: 50px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                letter-spacing: 3px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header light">
-        <div class="container">
-            <div class="header-inner">
-                <a href="index.html" class="logo">
-                    <span class="logo-mark">R</span>
-                    <span>LE RENOUVEAU</span>
-                </a>
-                
-                <nav class="nav">
-                    <div class="nav-links">
-                        <a href="index.html" class="nav-link active">Accueil</a>
-                        <a href="manifeste.html" class="nav-link">Manifeste</a>
-                        <a href="programme.html" class="nav-link">Programme</a>
-                        <a href="equipe.html" class="nav-link">Équipe</a>
-                        <a href="actualites.html" class="nav-link">Actualités</a>
-                        <a href="agenda.html" class="nav-link">Agenda</a>
-                    </div>
-                    <a href="rejoindre.html" class="btn btn-primary">Nous rejoindre</a>
-                    
-                    <button class="menu-toggle" aria-label="Menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </nav>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <a href="#">Espace Membre</a>
+            <div class="social-icons">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Twitter">𝕏</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="YouTube">▶</a>
             </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-mr">MR</span>
+                <span class="logo-plus">+</span>
+            </a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="mainNav">
+                <a href="index.html" class="active">Accueil</a>
+                <a href="mouvement.html">Mouvement</a>
+                <a href="actu.html">Actu</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="actions.html">Nos actions</a>
+                <a href="contact.html">Contact</a>
+                <a href="adhesion.html" class="btn-adhesion">Adhésion</a>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg">
-            <div class="hero-pattern"></div>
-        </div>
-        
-        <div class="hero-content">
-            <div class="container">
-                <div class="grid grid-12">
-                    <div class="col-span-8">
-                        <h1 class="hero-title display-2 fade-up">
-                            IL EST TEMPS
-                            <span class="accent">DE TOUT CHANGER</span>
-                        </h1>
-                        <p class="hero-subtitle fade-up stagger-1">
-                            Un mouvement citoyen pour une Belgique plus juste, plus libre et plus solidaire.
-                        </p>
-                        <div class="hero-actions fade-up stagger-2">
-                            <a href="manifeste.html" class="btn btn-primary btn-lg">Découvrir notre vision</a>
-                            <a href="rejoindre.html" class="btn btn-outline-white btn-lg">Nous rejoindre</a>
-                        </div>
-                    </div>
+    <section class="hero-home">
+        <div class="container">
+            <div class="hero-text">
+                <h1>MR <span>EN MIEUX</span></h1>
+                <p class="hero-subtitle">Le Mouvement Radical</p>
+                <p class="hero-desc">Pour une politique authentique, transparente et au service des citoyens. Rejoignez le mouvement qui fait bouger les lignes.</p>
+                <div class="hero-buttons">
+                    <a href="adhesion.html" class="btn btn-white">Rejoignez-nous</a>
+                    <a href="mouvement.html" class="btn btn-outline">En savoir plus</a>
                 </div>
             </div>
-        </div>
-        
-        <div class="hero-scroll">
-            <span>Découvrir</span>
-            <div class="hero-scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- Mission Statement -->
-    <section class="section-lg bg-white">
-        <div class="container">
-            <div class="grid grid-12 items-center gap-2xl">
-                <div class="col-span-5 reveal">
-                    <span class="text-accent font-semibold text-sm" style="letter-spacing: 0.2em; text-transform: uppercase;">Notre mission</span>
-                    <h2 class="h1 mt-2 mb-4" style="text-transform: none; font-family: var(--font-serif); font-style: italic; letter-spacing: -0.02em;">
-                        Remettre le citoyen au cœur de la décision politique
-                    </h2>
-                </div>
-                <div class="col-span-7 reveal stagger-1">
-                    <p class="lead mb-4">
-                        Le Renouveau n'est pas un parti comme les autres. Nous sommes un mouvement de citoyens qui refusent la résignation et veulent reprendre le contrôle de leur avenir.
-                    </p>
-                    <p class="text-muted mb-4">
-                        Face à une classe politique déconnectée des réalités, face à des institutions qui ne répondent plus aux défis de notre temps, nous proposons une alternative radicale : celle d'une démocratie vivante, où chaque voix compte, où chaque décision est prise dans l'intérêt général.
-                    </p>
-                    <a href="manifeste.html" class="btn btn-outline-dark">Lire notre manifeste</a>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <span class="hero-card-badge">À la Une</span>
+                    <h3>Le Mouvement Radical dévoile ses 50 propositions pour une Belgique plus juste</h3>
+                    <p>Découvrez notre programme complet pour transformer la société et redonner le pouvoir aux citoyens.</p>
+                    <div class="hero-card-footer">
+                        <div class="hero-card-avatar">MR</div>
+                        <div class="hero-card-author">
+                            <strong>Équipe MR+</strong>
+                            <span>09 janvier 2026</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Values Section -->
-    <section class="section bg-gray">
+    <section class="section section-gray">
         <div class="container">
-            <div class="text-center mb-5 reveal">
-                <span class="text-accent font-semibold text-sm" style="letter-spacing: 0.2em; text-transform: uppercase;">Nos fondamentaux</span>
-                <h2 class="h2 mt-2">Cinq piliers pour transformer la Belgique</h2>
+            <div class="section-header">
+                <h2>Nos Valeurs</h2>
+                <p>Les piliers de notre engagement pour une société meilleure</p>
             </div>
-            
-            <div class="grid grid-3 gap-xl">
-                <div class="feature-card reveal stagger-1">
-                    <div class="feature-icon">⚖️</div>
-                    <h3 class="feature-title">Justice sociale</h3>
-                    <p class="feature-text">Une société où chacun a sa place, où le travail est valorisé et où personne n'est laissé au bord du chemin.</p>
+            <div class="grid-3">
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Notre Histoire</h3>
+                    <p>Un mouvement citoyen né de la volonté de changer les choses. Nous croyons en une politique différente, plus proche des gens.</p>
                 </div>
-                
-                <div class="feature-card reveal stagger-2">
-                    <div class="feature-icon">🗳️</div>
-                    <h3 class="feature-title">Démocratie directe</h3>
-                    <p class="feature-text">Redonner le pouvoir aux citoyens par le référendum, la consultation permanente et la transparence totale.</p>
+                <div class="value-card">
+                    <div class="value-icon">⚖️</div>
+                    <h3>Le Radicalisme</h3>
+                    <p>Aller à la racine des problèmes pour proposer des solutions concrètes. Pas de demi-mesures, mais des actions déterminées.</p>
                 </div>
-                
-                <div class="feature-card reveal stagger-3">
-                    <div class="feature-icon">🌍</div>
-                    <h3 class="feature-title">Transition écologique</h3>
-                    <p class="feature-text">Un plan ambitieux pour faire de la Belgique un leader européen de la transition environnementale.</p>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Notre Projet</h3>
+                    <p>Construire ensemble une société plus juste, plus transparente et plus efficace. Le changement, c'est maintenant.</p>
                 </div>
-                
-                <div class="feature-card reveal stagger-4">
-                    <div class="feature-icon">💼</div>
-                    <h3 class="feature-title">Économie au service de tous</h3>
-                    <p class="feature-text">Libérer l'entrepreneuriat, soutenir l'innovation et garantir une répartition équitable des richesses.</p>
-                </div>
-                
-                <div class="feature-card reveal stagger-5">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Sécurité et libertés</h3>
-                    <p class="feature-text">Protéger nos concitoyens sans jamais sacrifier les libertés fondamentales qui font notre démocratie.</p>
-                </div>
-                
-                <div class="feature-card reveal stagger-5" style="background: var(--color-primary); border-color: transparent;">
-                    <div class="feature-icon" style="background: var(--color-gold);">🚀</div>
-                    <h3 class="feature-title text-white">Rejoignez le mouvement</h3>
-                    <p class="feature-text" style="color: rgba(255,255,255,0.7);">Ensemble, nous avons le pouvoir de changer les choses. Votre voix compte.</p>
-                    <a href="rejoindre.html" class="btn btn-primary btn-sm mt-3">Adhérer maintenant</a>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Actualités</h2>
+                <p>Suivez nos actions et nos prises de position</p>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-image">📰</div>
+                    <div class="card-content">
+                        <span class="card-tag">Communiqué</span>
+                        <h3>MR+ lance sa grande consultation citoyenne dans toute la Wallonie</h3>
+                        <p>Plus de 50 rencontres prévues pour écouter les préoccupations des citoyens...</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>08/01/2026</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-image">🎤</div>
+                    <div class="card-content">
+                        <span class="card-tag">Discours</span>
+                        <h3>« Ensemble, nous pouvons changer les choses » - Discours de rentrée</h3>
+                        <p>Le président du mouvement a présenté les grandes lignes de l'action politique...</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>07/01/2026</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-image">📊</div>
+                    <div class="card-content">
+                        <span class="card-tag">Programme</span>
+                        <h3>50 propositions concrètes pour une économie au service de tous</h3>
+                        <p>Notre programme économique détaillé pour relancer la croissance et l'emploi...</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>05/01/2026</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center mt-4">
+                <a href="actu.html" class="btn btn-outline-blue">Voir toutes les actualités</a>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="section stats-section">
+    <section class="section section-blue stats-section">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item reveal">
-                    <div class="stat-number" data-counter="15000" data-suffix="+">0</div>
-                    <div class="stat-label">Membres actifs</div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10000" data-suffix="+">0</div>
+                    <div class="stat-label">Membres Actifs</div>
                 </div>
-                <div class="stat-item reveal stagger-1">
-                    <div class="stat-number" data-counter="200">0</div>
-                    <div class="stat-label">Sections locales</div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-label">Sections Locales</div>
                 </div>
-                <div class="stat-item reveal stagger-2">
-                    <div class="stat-number" data-counter="75">0</div>
-                    <div class="stat-label">Propositions de loi</div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Propositions</div>
                 </div>
-                <div class="stat-item reveal stagger-3">
-                    <div class="stat-number" data-counter="100" data-suffix="%">0</div>
-                    <div class="stat-label">Transparence financière</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quote Section -->
-    <section class="section quote-section">
-        <div class="container text-center">
-            <div class="quote-mark">"</div>
-            <blockquote class="quote-text reveal">
-                La politique n'est pas l'art du possible. C'est l'art de rendre possible ce qui est nécessaire.
-            </blockquote>
-            <cite class="quote-author reveal stagger-1">— Notre conviction fondatrice</cite>
-        </div>
-    </section>
-
-    <!-- Latest News -->
-    <section class="section">
-        <div class="container">
-            <div class="flex justify-between items-end mb-5 reveal">
-                <div>
-                    <span class="text-accent font-semibold text-sm" style="letter-spacing: 0.2em; text-transform: uppercase;">Actualités</span>
-                    <h2 class="h2 mt-2">Les dernières nouvelles</h2>
-                </div>
-                <a href="actualites.html" class="btn btn-outline-dark hidden" style="display: none;">Toutes les actualités</a>
-            </div>
-            
-            <div class="grid grid-3 gap-xl">
-                <article class="card reveal stagger-1">
-                    <div class="card-image">
-                        <div class="card-image-placeholder">📢</div>
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag">Communiqué</span>
-                        <h3 class="card-title">Le Renouveau dévoile son plan pour la réforme fiscale</h3>
-                        <p class="card-text">Notre proposition complète pour une fiscalité plus juste et plus simple, qui récompense le travail et l'initiative.</p>
-                        <div class="card-meta">
-                            <span class="card-meta-avatar">R</span>
-                            <span>8 janvier 2026</span>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="card reveal stagger-2">
-                    <div class="card-image">
-                        <div class="card-image-placeholder">🎤</div>
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag">Discours</span>
-                        <h3 class="card-title">« La Belgique mérite mieux » — Discours de rentrée politique</h3>
-                        <p class="card-text">Retour sur les temps forts de notre grand meeting de rentrée à Bruxelles devant plus de 3000 militants.</p>
-                        <div class="card-meta">
-                            <span class="card-meta-avatar">R</span>
-                            <span>5 janvier 2026</span>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="card reveal stagger-3">
-                    <div class="card-image">
-                        <div class="card-image-placeholder">📊</div>
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag">Sondage</span>
-                        <h3 class="card-title">Le Renouveau en forte progression dans les intentions de vote</h3>
-                        <p class="card-text">Selon le dernier baromètre politique, notre mouvement gagne 4 points et s'impose comme une force incontournable.</p>
-                        <div class="card-meta">
-                            <span class="card-meta-avatar">R</span>
-                            <span>2 janvier 2026</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            
-            <div class="text-center mt-5 reveal">
-                <a href="actualites.html" class="btn btn-outline-dark">Voir toutes les actualités</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Upcoming Events -->
-    <section class="section bg-gray">
-        <div class="container">
-            <div class="grid grid-12 gap-2xl">
-                <div class="col-span-4 reveal">
-                    <span class="text-accent font-semibold text-sm" style="letter-spacing: 0.2em; text-transform: uppercase;">Agenda</span>
-                    <h2 class="h2 mt-2 mb-4">Prochains événements</h2>
-                    <p class="text-muted mb-4">Venez à notre rencontre lors de nos événements. Débats, conférences, réunions citoyennes : chaque occasion est bonne pour échanger et construire ensemble.</p>
-                    <a href="agenda.html" class="btn btn-outline-dark">Voir tout l'agenda</a>
-                </div>
-                
-                <div class="col-span-8">
-                    <div class="flex flex-col gap-lg">
-                        <!-- Event 1 -->
-                        <div class="reveal stagger-1" style="background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; gap: var(--space-xl); align-items: center; box-shadow: var(--shadow-sm);">
-                            <div style="text-align: center; min-width: 80px;">
-                                <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--color-accent); line-height: 1;">15</div>
-                                <div style="font-size: 0.875rem; color: var(--color-gray-500); text-transform: uppercase;">Jan 2026</div>
-                            </div>
-                            <div style="flex: 1;">
-                                <span style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); background: rgba(245, 158, 11, 0.1); padding: 4px 12px; border-radius: 100px;">Conférence</span>
-                                <h4 style="font-family: var(--font-body); font-size: 1.125rem; font-weight: 600; text-transform: none; letter-spacing: normal; margin: var(--space-sm) 0;">L'avenir de l'Europe : quelle place pour la Belgique ?</h4>
-                                <p style="color: var(--color-gray-500); font-size: 0.875rem;">📍 Palais des Beaux-Arts, Bruxelles</p>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-primary">S'inscrire</a>
-                        </div>
-                        
-                        <!-- Event 2 -->
-                        <div class="reveal stagger-2" style="background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; gap: var(--space-xl); align-items: center; box-shadow: var(--shadow-sm);">
-                            <div style="text-align: center; min-width: 80px;">
-                                <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--color-accent); line-height: 1;">22</div>
-                                <div style="font-size: 0.875rem; color: var(--color-gray-500); text-transform: uppercase;">Jan 2026</div>
-                            </div>
-                            <div style="flex: 1;">
-                                <span style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); background: rgba(245, 158, 11, 0.1); padding: 4px 12px; border-radius: 100px;">Réunion citoyenne</span>
-                                <h4 style="font-family: var(--font-body); font-size: 1.125rem; font-weight: 600; text-transform: none; letter-spacing: normal; margin: var(--space-sm) 0;">Rencontre avec les habitants de Liège</h4>
-                                <p style="color: var(--color-gray-500); font-size: 0.875rem;">📍 Maison de la Culture, Liège</p>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-primary">S'inscrire</a>
-                        </div>
-                        
-                        <!-- Event 3 -->
-                        <div class="reveal stagger-3" style="background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; gap: var(--space-xl); align-items: center; box-shadow: var(--shadow-sm);">
-                            <div style="text-align: center; min-width: 80px;">
-                                <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--color-accent); line-height: 1;">29</div>
-                                <div style="font-size: 0.875rem; color: var(--color-gray-500); text-transform: uppercase;">Jan 2026</div>
-                            </div>
-                            <div style="flex: 1;">
-                                <span style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); background: rgba(245, 158, 11, 0.1); padding: 4px 12px; border-radius: 100px;">Meeting</span>
-                                <h4 style="font-family: var(--font-body); font-size: 1.125rem; font-weight: 600; text-transform: none; letter-spacing: normal; margin: var(--space-sm) 0;">Grand rassemblement national — Namur</h4>
-                                <p style="color: var(--color-gray-500); font-size: 0.875rem;">📍 Namur Expo, Namur</p>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-primary">S'inscrire</a>
-                        </div>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                    <div class="stat-label">Engagement</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section cta-section">
+    <section class="cta-section">
         <div class="container">
-            <div class="cta-content reveal">
-                <h2 class="cta-title h1">Prêt à changer les choses ?</h2>
-                <p class="cta-text">Rejoignez les 15 000 citoyens qui ont décidé de ne plus subir mais d'agir. Ensemble, nous avons le pouvoir.</p>
-                <div class="flex gap-md justify-center">
-                    <a href="rejoindre.html" class="btn btn-lg" style="background: var(--color-primary); color: var(--color-white);">Adhérer maintenant</a>
-                    <a href="contact.html" class="btn btn-lg btn-outline" style="border-color: var(--color-primary); color: var(--color-primary);">Nous contacter</a>
+            <h2>Vous êtes d'accord ?</h2>
+            <p>Rejoignez le mouvement et participez activement à la construction d'un avenir meilleur pour tous.</p>
+            <a href="adhesion.html" class="btn btn-white">Rejoignez-nous</a>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>Agenda</h2>
+                <p>Retrouvez-nous lors de nos prochains événements</p>
+            </div>
+            <div class="events-list">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">Jan</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Réunion citoyenne - Bruxelles</h4>
+                        <p>📍 Maison des Citoyens, Place de la Liberté 1, 1000 Bruxelles</p>
+                    </div>
                 </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">Jan</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Conférence : L'avenir de la démocratie</h4>
+                        <p>📍 Université de Liège, Salle Académique</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">29</span>
+                        <span class="month">Jan</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Tournée des vœux 2026 - Namur</h4>
+                        <p>📍 Centre Culturel de Namur, Boulevard de la Meuse</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="agenda.html" class="btn btn-outline-blue">Voir tout l'agenda</a>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="section bg-primary">
+    <!-- Newsletter Section -->
+    <section class="section">
         <div class="container">
-            <div class="grid grid-12 items-center gap-2xl">
-                <div class="col-span-6 reveal">
-                    <h3 class="h3 text-white mb-2">Restez informé</h3>
-                    <p style="color: rgba(255,255,255,0.7);">Recevez nos actualités, nos analyses et nos invitations aux événements directement dans votre boîte mail.</p>
-                </div>
-                <div class="col-span-6 reveal stagger-1">
-                    <form class="flex gap-md" onsubmit="event.preventDefault(); subscribeNewsletter(this);">
-                        <input type="email" class="form-control" placeholder="Votre adresse email" required style="flex: 1; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">
-                        <button type="submit" class="btn btn-primary">S'inscrire</button>
+            <div class="newsletter-box">
+                <div class="grid-2" style="align-items: center;">
+                    <div>
+                        <h3 style="font-size: 24px; margin-bottom: 10px; color: var(--mr-blue);">Restez informé !</h3>
+                        <p style="color: var(--mr-gray);">Abonnez-vous à notre newsletter pour suivre nos actions.</p>
+                    </div>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); subscribeNewsletter(this.querySelector('input').value);">
+                        <input type="email" placeholder="Votre adresse email" required>
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
                     </form>
-                    <p class="text-xs mt-2" style="color: rgba(255,255,255,0.5);">En vous inscrivant, vous acceptez de recevoir nos communications. Désinscription possible à tout moment.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="logo-mark">R</span>
-                        <span>LE RENOUVEAU</span>
-                    </div>
-                    <p class="footer-desc">
-                        Le Renouveau est un mouvement politique citoyen qui porte une vision radicale et ambitieuse pour transformer la Belgique. Indépendant des partis traditionnels, nous construisons une alternative crédible et responsable.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Twitter">𝕏</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
-                        <a href="#" aria-label="YouTube">▶</a>
-                    </div>
+                    <div class="logo-mr">MR+</div>
+                    <p>Le Mouvement Radical - Pour une politique qui vous ressemble, qui vous rassemble. Site fan non-officiel.</p>
                 </div>
-                
                 <div>
-                    <h4 class="footer-title">Le Mouvement</h4>
+                    <h4 class="footer-title">Navigation</h4>
                     <ul class="footer-links">
-                        <li><a href="manifeste.html">Notre manifeste</a></li>
-                        <li><a href="programme.html">Le programme</a></li>
-                        <li><a href="equipe.html">L'équipe</a></li>
-                        <li><a href="#">Nos élus</a></li>
-                        <li><a href="#">Nos sections</a></li>
+                        <li><a href="mouvement.html">Mouvement</a></li>
+                        <li><a href="actions.html">Nos actions</a></li>
+                        <li><a href="actu.html">Actualités</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
                     </ul>
                 </div>
-                
                 <div>
-                    <h4 class="footer-title">S'engager</h4>
+                    <h4 class="footer-title">Ressources</h4>
                     <ul class="footer-links">
-                        <li><a href="rejoindre.html">Adhérer</a></li>
-                        <li><a href="#">Faire un don</a></li>
-                        <li><a href="#">Devenir bénévole</a></li>
-                        <li><a href="#">Créer une section</a></li>
-                        <li><a href="agenda.html">Nos événements</a></li>
+                        <li><a href="actions.html">Programme</a></li>
+                        <li><a href="actu.html">Discours</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h4 class="footer-title">Actualités</h4>
-                    <ul class="footer-links">
-                        <li><a href="actualites.html">Communiqués</a></li>
-                        <li><a href="#">Discours</a></li>
-                        <li><a href="#">Dans les médias</a></li>
-                        <li><a href="#">Dossiers</a></li>
-                        <li><a href="#">Newsletter</a></li>
-                    </ul>
-                </div>
-                
                 <div>
                     <h4 class="footer-title">Contact</h4>
                     <ul class="footer-links">
-                        <li><a href="contact.html">Nous écrire</a></li>
-                        <li><a href="#">Presse</a></li>
-                        <li><a href="#">Siège national</a></li>
-                        <li><a href="#">Espace membre</a></li>
+                        <li><a href="mailto:contact@mrenmieux.be">contact@mrenmieux.be</a></li>
+                        <li><a href="contact.html">Bruxelles, Belgique</a></li>
+                        <li><a href="contact.html">Presse</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>© 2026 Le Renouveau. Tous droits réservés.</p>
-                <div class="footer-legal">
-                    <a href="#">Mentions légales</a>
-                    <a href="#">Politique de confidentialité</a>
-                    <a href="#">Transparence financière</a>
+                <p>© 2026 MR EN MIEUX - Le Mouvement Radical. Site fan non-officiel.</p>
+                <div class="footer-social">
+                    <a href="#">f</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">📷</a>
+                    <a href="#">in</a>
+                    <a href="#">▶</a>
                 </div>
             </div>
         </div>
