@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhésion - MR EN MIEUX</title>
+    <meta name="description" content="Rejoignez le Mouvement Radical. Devenez membre et participez au changement.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .pricing-card {
+            background: var(--mr-white);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        .pricing-card.featured {
+            border-color: var(--mr-blue);
+            transform: scale(1.05);
+        }
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--mr-blue);
+            color: var(--mr-white);
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .pricing-card h3 {
+            font-size: 24px;
+            color: var(--mr-text);
+            margin-bottom: 10px;
+        }
+        .pricing-card .price {
+            font-size: 50px;
+            font-weight: 800;
+            color: var(--mr-blue);
+            margin: 20px 0;
+        }
+        .pricing-card .price span {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--mr-gray);
+        }
+        .pricing-features {
+            text-align: left;
+            margin: 30px 0;
+        }
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: var(--mr-text);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--mr-blue);
+            font-weight: 700;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+        }
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 74, 153, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 35px;
+        }
+        .benefit-item h4 {
+            font-size: 18px;
+            color: var(--mr-text);
+            margin-bottom: 10px;
+        }
+        .benefit-item p {
+            color: var(--mr-gray);
+            font-size: 14px;
+        }
+        .adhesion-form-section {
+            background: var(--mr-white);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: var(--shadow-md);
+        }
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-card.featured {
+                transform: none;
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .adhesion-form-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <a href="#">Espace Membre</a>
+            <div class="social-icons">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Twitter">𝕏</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="YouTube">▶</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-mr">MR</span>
+                <span class="logo-plus">+</span>
+            </a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="mainNav">
+                <a href="index.html">Accueil</a>
+                <a href="mouvement.html">Mouvement</a>
+                <a href="actu.html">Actu</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="actions.html">Nos actions</a>
+                <a href="contact.html">Contact</a>
+                <a href="adhesion.html" class="btn-adhesion active">Adhésion</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Rejoignez-nous</h1>
+            <p>Devenez membre du Mouvement Radical et participez au changement</p>
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>›</span>
+                <span>Adhésion</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choisissez votre formule</h2>
+                <p>Plusieurs options pour s'engager selon vos moyens</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Reduced Rate -->
+                <div class="pricing-card">
+                    <h3>Tarif réduit</h3>
+                    <p style="color: var(--mr-gray); font-size: 14px;">Étudiants, demandeurs d'emploi, pensionnés</p>
+                    <div class="price">10€ <span>/an</span></div>
+                    <ul class="pricing-features">
+                        <li>Carte de membre</li>
+                        <li>Newsletter mensuelle</li>
+                        <li>Accès aux événements</li>
+                        <li>Droit de vote aux AG</li>
+                    </ul>
+                    <a href="#form" class="btn btn-outline-blue" style="width: 100%;">Choisir</a>
+                </div>
+
+                <!-- Standard -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Populaire</span>
+                    <h3>Membre</h3>
+                    <p style="color: var(--mr-gray); font-size: 14px;">L'adhésion classique</p>
+                    <div class="price">25€ <span>/an</span></div>
+                    <ul class="pricing-features">
+                        <li>Carte de membre</li>
+                        <li>Newsletter mensuelle</li>
+                        <li>Accès prioritaire aux événements</li>
+                        <li>Droit de vote aux AG</li>
+                        <li>Accès à l'espace membre</li>
+                        <li>Réductions partenaires</li>
+                    </ul>
+                    <a href="#form" class="btn btn-primary" style="width: 100%;">Choisir</a>
+                </div>
+
+                <!-- Supporter -->
+                <div class="pricing-card">
+                    <h3>Soutien</h3>
+                    <p style="color: var(--mr-gray); font-size: 14px;">Pour ceux qui veulent nous soutenir davantage</p>
+                    <div class="price">50€ <span>/an</span></div>
+                    <ul class="pricing-features">
+                        <li>Tous les avantages Membre</li>
+                        <li>Invitation aux événements VIP</li>
+                        <li>Rencontres avec l'équipe dirigeante</li>
+                        <li>Mention sur notre site</li>
+                        <li>Kit de bienvenue exclusif</li>
+                    </ul>
+                    <a href="#form" class="btn btn-outline-blue" style="width: 100%;">Choisir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi nous rejoindre ?</h2>
+                <p>Les avantages d'être membre du Mouvement Radical</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🗳️</div>
+                    <h4>Participez</h4>
+                    <p>Votez lors des assemblées générales et influencez les décisions du mouvement.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤝</div>
+                    <h4>Rencontrez</h4>
+                    <p>Rejoignez une communauté de citoyens engagés partageant vos valeurs.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📚</div>
+                    <h4>Formez-vous</h4>
+                    <p>Accédez à nos formations et conférences exclusives sur les enjeux de société.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💬</div>
+                    <h4>Exprimez-vous</h4>
+                    <p>Proposez vos idées et participez à l'élaboration de notre programme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adhesion Form -->
+    <section class="section" id="form">
+        <div class="container">
+            <div class="adhesion-form-section">
+                <div class="section-header" style="margin-bottom: 40px;">
+                    <h2>Formulaire d'adhésion</h2>
+                    <p>Remplissez le formulaire ci-dessous pour devenir membre</p>
+                </div>
+
+                <form data-validate style="max-width: 800px; margin: 0 auto;">
+                    <div class="form-group">
+                        <label for="formula">Formule choisie *</label>
+                        <select id="formula" class="form-control" required>
+                            <option value="">Sélectionnez une formule</option>
+                            <option value="reduced">Tarif réduit - 10€/an</option>
+                            <option value="member" selected>Membre - 25€/an</option>
+                            <option value="support">Soutien - 50€/an</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstname">Prénom *</label>
+                            <input type="text" id="firstname" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Nom *</label>
+                            <input type="text" id="lastname" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthdate">Date de naissance *</label>
+                            <input type="date" id="birthdate" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profession">Profession</label>
+                            <input type="text" id="profession" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Adresse *</label>
+                        <input type="text" id="address" class="form-control" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postal">Code postal *</label>
+                            <input type="text" id="postal" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ville *</label>
+                            <input type="text" id="city" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="motivation">Pourquoi souhaitez-vous nous rejoindre ?</label>
+                        <textarea id="motivation" class="form-control" rows="4" placeholder="Partagez vos motivations avec nous..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter" style="font-size: 14px; color: var(--mr-gray);">
+                                Je souhaite recevoir la newsletter du mouvement
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="volunteer">
+                            <label for="volunteer" style="font-size: 14px; color: var(--mr-gray);">
+                                Je souhaite m'impliquer activement comme bénévole
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms" style="font-size: 14px; color: var(--mr-gray);">
+                                J'accepte les <a href="#" style="color: var(--mr-blue);">statuts du mouvement</a> et la 
+                                <a href="#" style="color: var(--mr-blue);">politique de confidentialité</a> *
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Valider mon adhésion</button>
+                    </div>
+
+                    <p class="text-center mt-3" style="color: var(--mr-gray); font-size: 14px;">
+                        Après validation, vous recevrez un email avec les instructions de paiement.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-blue">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ils ont rejoint le mouvement</h2>
+                <p>Découvrez les témoignages de nos membres</p>
+            </div>
+
+            <div class="grid-3">
+                <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 30px;">
+                    <p style="font-style: italic; margin-bottom: 20px; opacity: 0.9;">"J'ai rejoint MR+ car j'en avais assez des promesses non tenues. Ici, on agit vraiment et chaque membre compte."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">👤</div>
+                        <div>
+                            <strong>Marie L.</strong>
+                            <p style="font-size: 13px; opacity: 0.7;">Membre depuis 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 30px;">
+                    <p style="font-style: italic; margin-bottom: 20px; opacity: 0.9;">"Les réunions citoyennes sont formidables. On peut vraiment s'exprimer et nos idées sont prises en compte dans le programme."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">👤</div>
+                        <div>
+                            <strong>Thomas B.</strong>
+                            <p style="font-size: 13px; opacity: 0.7;">Membre depuis 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 30px;">
+                    <p style="font-style: italic; margin-bottom: 20px; opacity: 0.9;">"Enfin un mouvement qui dit ce qu'il fait et fait ce qu'il dit. Fière d'être membre !"</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;">👤</div>
+                        <div>
+                            <strong>Sophie D.</strong>
+                            <p style="font-size: 13px; opacity: 0.7;">Membre depuis 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mr">MR+</div>
+                    <p>Le Mouvement Radical - Pour une politique qui vous ressemble, qui vous rassemble. Site fan non-officiel.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="mouvement.html">Mouvement</a></li>
+                        <li><a href="actions.html">Nos actions</a></li>
+                        <li><a href="actu.html">Actualités</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Ressources</h4>
+                    <ul class="footer-links">
+                        <li><a href="actions.html">Programme</a></li>
+                        <li><a href="actu.html">Discours</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@mrenmieux.be">contact@mrenmieux.be</a></li>
+                        <li><a href="contact.html">Bruxelles, Belgique</a></li>
+                        <li><a href="contact.html">Presse</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MR EN MIEUX - Le Mouvement Radical. Site fan non-officiel.</p>
+                <div class="footer-social">
+                    <a href="#">f</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">📷</a>
+                    <a href="#">in</a>
+                    <a href="#">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
