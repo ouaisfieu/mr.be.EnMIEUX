@@ -9,9 +9,9 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-[![Stars](https://img.shields.io/github/stars/username/mr-en-mieux?style=social)](https://github.com/username/mr-en-mieux/stargazers)
-[![Forks](https://img.shields.io/github/forks/username/mr-en-mieux?style=social)](https://github.com/username/mr-en-mieux/network/members)
-[![Issues](https://img.shields.io/github/issues/username/mr-en-mieux?style=social)](https://github.com/username/mr-en-mieux/issues)
+[![Stars](https://img.shields.io/github/stars/ouaisfieu/mr-en-mieux?style=social)](https://github.com/ouaisfieu/mr-en-mieux/stargazers)
+[![Forks](https://img.shields.io/github/forks/ouaisfieu/mr-en-mieux?style=social)](https://github.com/ouaisfieu/mr-en-mieux/network/members)
+[![Issues](https://img.shields.io/github/issues/ouaisfieu/mr-en-mieux?style=social)](https://github.com/ouaisfieu/mr-en-mieux/issues)
 
 <br />
 
@@ -21,7 +21,7 @@
 
 **Site web fan club pour le mouvement politique MR (Belgique)**
 
-[Voir la Démo](https://username.github.io/mr-en-mieux) · [Signaler un Bug](https://github.com/username/mr-en-mieux/issues) · [Proposer une Feature](https://github.com/username/mr-en-mieux/issues)
+[Voir la Démo](https://ouaisfieu.github.io/mr-en-mieux) · [Signaler un Bug](https://github.com/ouaisfieu/mr-en-mieux/issues) · [Proposer une Feature](https://github.com/ouaisfieu/mr-en-mieux/issues)
 
 </div>
 
@@ -175,7 +175,7 @@ Aucun ! Ce projet utilise uniquement HTML, CSS et JavaScript vanilla. Vous avez 
 1. **Clonez le repository**
 
 ```bash
-git clone https://github.com/username/mr-en-mieux.git
+git clone https://github.com/ouaisfieu/mr-en-mieux.git
 ```
 
 2. **Accédez au dossier**
@@ -211,7 +211,7 @@ git push origin main
 
 # 3. Allez dans Settings > Pages
 # 4. Sélectionnez la branche 'main' et le dossier '/ (root)'
-# 5. Votre site est live sur https://username.github.io/mr-en-mieux
+# 5. Votre site est live sur https://ouaisfieu.github.io/mr-en-mieux
 ```
 
 ---
@@ -413,7 +413,7 @@ copies of the Software...
 
 <br>
 
-[![GitHub stars](https://img.shields.io/github/stars/username/mr-en-mieux?style=for-the-badge&logo=github)](https://github.com/username/mr-en-mieux/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/ouaisfieu/mr-en-mieux?style=for-the-badge&logo=github)](https://github.com/ouaisfieu/mr-en-mieux/stargazers)
 
 <br>
 
