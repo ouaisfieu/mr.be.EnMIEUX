@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Programme | LE RENOUVEAU</title>
+    <meta name="description" content="75 propositions concrètes pour transformer la Belgique. Découvrez notre programme complet.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon fill='%23f59e0b' points='50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='%230a1628' font-weight='bold'>R</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .theme-nav {
+            position: sticky;
+            top: var(--header-height);
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-gray-200);
+            z-index: 100;
+            overflow-x: auto;
+        }
+        .theme-nav-inner {
+            display: flex;
+            gap: var(--space-xs);
+            padding: var(--space-md) 0;
+        }
+        .theme-nav-btn {
+            padding: var(--space-sm) var(--space-lg);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--color-gray-600);
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: var(--radius-full);
+            white-space: nowrap;
+            transition: var(--transition-base);
+        }
+        .theme-nav-btn:hover,
+        .theme-nav-btn.active {
+            background: var(--color-accent);
+            color: var(--color-white);
+            border-color: var(--color-accent);
+        }
+        .proposal-card {
+            display: flex;
+            gap: var(--space-lg);
+            padding: var(--space-xl);
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gray-100);
+            margin-bottom: var(--space-md);
+            transition: var(--transition-base);
+        }
+        .proposal-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: var(--shadow-md);
+        }
+        .proposal-number {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: var(--color-gold);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .proposal-content h4 {
+            font-family: var(--font-body);
+            font-size: 1.0625rem;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: normal;
+            margin-bottom: var(--space-xs);
+            color: var(--color-gray-800);
+        }
+        .proposal-content p {
+            font-size: 0.9375rem;
+            color: var(--color-gray-500);
+            line-height: 1.6;
+        }
+        .theme-section {
+            padding: var(--space-4xl) 0;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+        .theme-section:last-child {
+            border-bottom: none;
+        }
+        .theme-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-2xl);
+        }
+        .theme-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .theme-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-primary);
+        }
+        .theme-subtitle {
+            color: var(--color-gray-500);
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header dark">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark">R</span>
+                    <span>LE RENOUVEAU</span>
+                </a>
+                <nav class="nav">
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">Accueil</a>
+                        <a href="manifeste.html" class="nav-link">Manifeste</a>
+                        <a href="programme.html" class="nav-link active">Programme</a>
+                        <a href="equipe.html" class="nav-link">Équipe</a>
+                        <a href="actualites.html" class="nav-link">Actualités</a>
+                        <a href="agenda.html" class="nav-link">Agenda</a>
+                    </div>
+                    <a href="rejoindre.html" class="btn btn-primary">Nous rejoindre</a>
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <span class="text-gold font-semibold text-sm fade-up" style="letter-spacing: 0.2em; text-transform: uppercase;">Notre programme</span>
+            <h1 class="h1 mt-2 fade-up stagger-1">75 propositions pour transformer la Belgique</h1>
+            <p class="lead fade-up stagger-2">Des mesures concrètes, chiffrées et réalistes pour répondre aux défis de notre temps.</p>
+        </div>
+    </section>
+
+    <!-- Theme Navigation -->
+    <nav class="theme-nav">
+        <div class="container">
+            <div class="theme-nav-inner">
+                <a href="#economie" class="theme-nav-btn active">Économie</a>
+                <a href="#social" class="theme-nav-btn">Social</a>
+                <a href="#ecologie" class="theme-nav-btn">Écologie</a>
+                <a href="#democratie" class="theme-nav-btn">Démocratie</a>
+                <a href="#education" class="theme-nav-btn">Éducation</a>
+                <a href="#securite" class="theme-nav-btn">Sécurité</a>
+                <a href="#sante" class="theme-nav-btn">Santé</a>
+                <a href="#europe" class="theme-nav-btn">Europe</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Programme Content -->
+    <main>
+        <div class="container">
+            
+            <!-- Économie -->
+            <section class="theme-section" id="economie">
+                <div class="theme-header reveal">
+                    <div class="theme-icon">💼</div>
+                    <div>
+                        <h2 class="theme-title">Économie & Emploi</h2>
+                        <p class="theme-subtitle">Libérer les énergies, récompenser le travail</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">01</div>
+                        <div class="proposal-content">
+                            <h4>Réduction des charges sur les bas salaires de 35%</h4>
+                            <p>Diminuer le coût du travail pour favoriser l'embauche et augmenter le net des travailleurs.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">02</div>
+                        <div class="proposal-content">
+                            <h4>Simplification administrative pour les PME</h4>
+                            <p>Guichet unique numérique pour toutes les démarches, réponse garantie en 30 jours.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">03</div>
+                        <div class="proposal-content">
+                            <h4>Défiscalisation des heures supplémentaires</h4>
+                            <p>Zéro charge sur les heures sup' pour récompenser ceux qui travaillent plus.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">04</div>
+                        <div class="proposal-content">
+                            <h4>Crédit-formation de 1500€ par travailleur</h4>
+                            <p>Un compte personnel de formation utilisable librement pour se former tout au long de la vie.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">05</div>
+                        <div class="proposal-content">
+                            <h4>Statut unique entrepreneur-salarié</h4>
+                            <p>Permettre de cumuler facilement activité salariée et indépendante complémentaire.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">06</div>
+                        <div class="proposal-content">
+                            <h4>Exonération totale pour les créateurs d'entreprise</h4>
+                            <p>Zéro charge sociale pendant les 3 premières années pour les nouveaux indépendants.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social -->
+            <section class="theme-section" id="social">
+                <div class="theme-header reveal">
+                    <div class="theme-icon">🤝</div>
+                    <div>
+                        <h2 class="theme-title">Protection sociale</h2>
+                        <p class="theme-subtitle">Une solidarité active qui accompagne vers l'autonomie</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">07</div>
+                        <div class="proposal-content">
+                            <h4>Revenu de base pour les jeunes de 18-25 ans</h4>
+                            <p>500€/mois conditionnés à une formation ou activité citoyenne pour lutter contre la précarité jeune.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">08</div>
+                        <div class="proposal-content">
+                            <h4>Pension minimum à 1500€ net</h4>
+                            <p>Aucun retraité ne doit vivre sous le seuil de pauvreté après une vie de travail.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">09</div>
+                        <div class="proposal-content">
+                            <h4>Allocations familiales universelles renforcées</h4>
+                            <p>+20% pour tous les enfants, avec majoration pour familles monoparentales.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">10</div>
+                        <div class="proposal-content">
+                            <h4>Accompagnement personnalisé des chômeurs</h4>
+                            <p>Un conseiller dédié pour 50 demandeurs d'emploi maximum, suivi intensif et formation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Écologie -->
+            <section class="theme-section" id="ecologie">
+                <div class="theme-header reveal">
+                    <div class="theme-icon">🌍</div>
+                    <div>
+                        <h2 class="theme-title">Transition écologique</h2>
+                        <p class="theme-subtitle">Une écologie populaire qui crée des emplois</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">11</div>
+                        <div class="proposal-content">
+                            <h4>Plan de rénovation énergétique de 10 milliards</h4>
+                            <p>Isoler tous les logements belges en 15 ans, créer 50 000 emplois dans le secteur.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">12</div>
+                        <div class="proposal-content">
+                            <h4>Prime à la conversion électrique de 8000€</h4>
+                            <p>Aide à l'achat de véhicules électriques, doublée pour les ménages modestes.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">13</div>
+                        <div class="proposal-content">
+                            <h4>100% d'énergies renouvelables en 2045</h4>
+                            <p>Plan massif d'investissement dans le solaire, l'éolien et le stockage.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">14</div>
+                        <div class="proposal-content">
+                            <h4>Gratuité des transports en commun pour les jeunes</h4>
+                            <p>Bus, tram, train gratuits pour les moins de 26 ans et les demandeurs d'emploi.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Démocratie -->
+            <section class="theme-section" id="democratie">
+                <div class="theme-header reveal">
+                    <div class="theme-icon">🗳️</div>
+                    <div>
+                        <h2 class="theme-title">Démocratie & Institutions</h2>
+                        <p class="theme-subtitle">Redonner le pouvoir aux citoyens</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">15</div>
+                        <div class="proposal-content">
+                            <h4>Référendum d'initiative citoyenne</h4>
+                            <p>500 000 signatures pour déclencher un référendum national contraignant.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">16</div>
+                        <div class="proposal-content">
+                            <h4>Suppression du cumul des mandats</h4>
+                            <p>Un élu, un mandat. Fin des carrières politiques à vie.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">17</div>
+                        <div class="proposal-content">
+                            <h4>Transparence totale des lobbies</h4>
+                            <p>Registre public de toutes les rencontres entre élus et représentants d'intérêts.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">18</div>
+                        <div class="proposal-content">
+                            <h4>Assemblée citoyenne tirée au sort</h4>
+                            <p>200 citoyens tirés au sort pour évaluer les politiques publiques.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Éducation -->
+            <section class="theme-section" id="education">
+                <div class="theme-header reveal">
+                    <div class="theme-icon">🎓</div>
+                    <div>
+                        <h2 class="theme-title">Éducation & Formation</h2>
+                        <p class="theme-subtitle">Investir dans l'avenir de nos enfants</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">19</div>
+                        <div class="proposal-content">
+                            <h4>Revalorisation salariale des enseignants de 20%</h4>
+                            <p>Attirer et retenir les meilleurs talents dans l'enseignement.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">20</div>
+                        <div class="proposal-content">
+                            <h4>Maximum 20 élèves par classe en primaire</h4>
+                            <p>Recrutement massif d'enseignants pour un accompagnement personnalisé.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">21</div>
+                        <div class="proposal-content">
+                            <h4>Équipement numérique pour tous les élèves</h4>
+                            <p>Un ordinateur par élève dès le secondaire, formation au numérique renforcée.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">22</div>
+                        <div class="proposal-content">
+                            <h4>Trilinguisme obligatoire</h4>
+                            <p>Maîtrise du français, néerlandais et anglais à la fin du secondaire.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sécurité -->
+            <section class="theme-section" id="securite">
+                <div class="theme-header reveal">
+                    <div class="theme-icon">🛡️</div>
+                    <div>
+                        <h2 class="theme-title">Sécurité & Justice</h2>
+                        <p class="theme-subtitle">Protéger sans renoncer aux libertés</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">23</div>
+                        <div class="proposal-content">
+                            <h4>5000 policiers supplémentaires</h4>
+                            <p>Renforcer la présence sur le terrain, dans les quartiers, au contact des citoyens.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">24</div>
+                        <div class="proposal-content">
+                            <h4>Justice en 6 mois maximum</h4>
+                            <p>Recrutement de magistrats et numérisation pour accélérer les procédures.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Santé -->
+            <section class="theme-section" id="sante">
+                <div class="theme-header reveal">
+                    <div class="theme-icon">🏥</div>
+                    <div>
+                        <h2 class="theme-title">Santé</h2>
+                        <p class="theme-subtitle">Un système de soins accessible à tous</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">25</div>
+                        <div class="proposal-content">
+                            <h4>Zéro reste à charge pour les soins essentiels</h4>
+                            <p>Médecin, dentiste, opticien : remboursement intégral pour tous.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">26</div>
+                        <div class="proposal-content">
+                            <h4>30 séances de psy remboursées par an</h4>
+                            <p>Faire de la santé mentale une priorité nationale.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Europe -->
+            <section class="theme-section" id="europe">
+                <div class="theme-header reveal">
+                    <div class="theme-icon">🇪🇺</div>
+                    <div>
+                        <h2 class="theme-title">Europe & International</h2>
+                        <p class="theme-subtitle">Une Europe qui protège</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">27</div>
+                        <div class="proposal-content">
+                            <h4>Taxe carbone aux frontières européennes</h4>
+                            <p>Protéger nos entreprises de la concurrence déloyale des pays qui polluent.</p>
+                        </div>
+                    </div>
+                    <div class="proposal-card reveal">
+                        <div class="proposal-number">28</div>
+                        <div class="proposal-content">
+                            <h4>Défense européenne commune</h4>
+                            <p>Mutualiser nos moyens militaires pour une Europe souveraine.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Download CTA -->
+    <section class="section bg-primary">
+        <div class="container text-center reveal">
+            <h3 class="h3 text-white mb-3">Téléchargez notre programme complet</h3>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: var(--space-2xl); max-width: 500px; margin-left: auto; margin-right: auto;">
+                75 propositions détaillées, chiffrées et argumentées dans un document PDF de 120 pages.
+            </p>
+            <a href="#" class="btn btn-primary btn-lg">📥 Télécharger le PDF</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-mark">R</span>
+                        <span>LE RENOUVEAU</span>
+                    </div>
+                    <p class="footer-desc">Un mouvement politique citoyen pour transformer la Belgique.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Le Mouvement</h4>
+                    <ul class="footer-links">
+                        <li><a href="manifeste.html">Manifeste</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="equipe.html">Équipe</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">S'engager</h4>
+                    <ul class="footer-links">
+                        <li><a href="rejoindre.html">Adhérer</a></li>
+                        <li><a href="agenda.html">Événements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Nous écrire</a></li>
+                    </ul>
+                </div>
+                <div></div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Le Renouveau.</p>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

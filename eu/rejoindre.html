@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous Rejoindre | LE RENOUVEAU</title>
+    <meta name="description" content="Rejoignez le Renouveau et participez à la transformation de la Belgique. Adhérez dès maintenant.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon fill='%23f59e0b' points='50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='%230a1628' font-weight='bold'>R</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .pricing-card {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: var(--transition-base);
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+        }
+        .pricing-card.featured {
+            border-color: var(--color-gold);
+            transform: scale(1.05);
+        }
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-gold);
+            color: var(--color-primary);
+            padding: var(--space-xs) var(--space-lg);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .pricing-title {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: normal;
+            margin-bottom: var(--space-xs);
+        }
+        .pricing-subtitle {
+            color: var(--color-gray-500);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-lg);
+        }
+        .pricing-price {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+        .pricing-price span {
+            font-size: 1.25rem;
+            color: var(--color-gray-500);
+        }
+        .pricing-period {
+            color: var(--color-gray-400);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-xl);
+        }
+        .pricing-features {
+            text-align: left;
+            margin-bottom: var(--space-xl);
+        }
+        .pricing-features li {
+            padding: var(--space-sm) 0;
+            color: var(--color-gray-600);
+            font-size: 0.9375rem;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--color-success);
+            font-weight: 700;
+        }
+        .benefits-item {
+            display: flex;
+            gap: var(--space-lg);
+            padding: var(--space-xl);
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        .benefits-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .benefits-title {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.0625rem;
+            text-transform: none;
+            letter-spacing: normal;
+            margin-bottom: var(--space-xs);
+        }
+        .benefits-text {
+            color: var(--color-gray-500);
+            font-size: 0.9375rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header dark">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark">R</span>
+                    <span>LE RENOUVEAU</span>
+                </a>
+                <nav class="nav">
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">Accueil</a>
+                        <a href="manifeste.html" class="nav-link">Manifeste</a>
+                        <a href="programme.html" class="nav-link">Programme</a>
+                        <a href="equipe.html" class="nav-link">Équipe</a>
+                        <a href="actualites.html" class="nav-link">Actualités</a>
+                        <a href="agenda.html" class="nav-link">Agenda</a>
+                    </div>
+                    <a href="rejoindre.html" class="btn btn-primary">Nous rejoindre</a>
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <span class="text-gold font-semibold text-sm fade-up" style="letter-spacing: 0.2em; text-transform: uppercase;">Rejoignez-nous</span>
+            <h1 class="h1 mt-2 fade-up stagger-1">Devenez acteur du changement</h1>
+            <p class="lead fade-up stagger-2">15 000 citoyens nous ont déjà rejoints. Et vous ?</p>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h2 class="h2">Choisissez votre engagement</h2>
+                <p class="text-muted mt-2">Plusieurs formules pour s'engager selon vos moyens et votre disponibilité.</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="pricing-card reveal">
+                    <h3 class="pricing-title">Sympathisant</h3>
+                    <p class="pricing-subtitle">Pour soutenir le mouvement</p>
+                    <div class="pricing-price">10<span>€</span></div>
+                    <p class="pricing-period">par an</p>
+                    <ul class="pricing-features">
+                        <li>Newsletter mensuelle</li>
+                        <li>Accès aux événements publics</li>
+                        <li>Badge sympathisant</li>
+                    </ul>
+                    <a href="#form" class="btn btn-outline-dark" style="width: 100%;">Choisir</a>
+                </div>
+                
+                <div class="pricing-card featured reveal stagger-1">
+                    <span class="pricing-badge">Populaire</span>
+                    <h3 class="pricing-title">Adhérent</h3>
+                    <p class="pricing-subtitle">L'engagement classique</p>
+                    <div class="pricing-price">30<span>€</span></div>
+                    <p class="pricing-period">par an</p>
+                    <ul class="pricing-features">
+                        <li>Carte de membre officielle</li>
+                        <li>Droit de vote aux AG</li>
+                        <li>Accès à l'espace membre</li>
+                        <li>Invitations aux événements</li>
+                        <li>Possibilité de candidater</li>
+                    </ul>
+                    <a href="#form" class="btn btn-primary" style="width: 100%;">Choisir</a>
+                </div>
+                
+                <div class="pricing-card reveal stagger-2">
+                    <h3 class="pricing-title">Soutien</h3>
+                    <p class="pricing-subtitle">Pour un engagement renforcé</p>
+                    <div class="pricing-price">100<span>€</span></div>
+                    <p class="pricing-period">par an</p>
+                    <ul class="pricing-features">
+                        <li>Tous les avantages Adhérent</li>
+                        <li>Rencontres avec l'équipe</li>
+                        <li>Invitation au dîner annuel</li>
+                        <li>Mention dans nos remerciements</li>
+                    </ul>
+                    <a href="#form" class="btn btn-outline-dark" style="width: 100%;">Choisir</a>
+                </div>
+            </div>
+            
+            <p class="text-center text-muted mt-4 text-sm">
+                Tarif réduit de 50% pour les étudiants, demandeurs d'emploi et pensionnés sur justificatif.
+            </p>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section bg-gray">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <span class="text-accent font-semibold text-sm" style="letter-spacing: 0.2em; text-transform: uppercase;">Pourquoi nous rejoindre ?</span>
+                <h2 class="h2 mt-2">Les avantages de l'adhésion</h2>
+            </div>
+            
+            <div class="grid grid-2 gap-xl">
+                <div class="benefits-item reveal">
+                    <div class="benefits-icon">🗳️</div>
+                    <div>
+                        <h4 class="benefits-title">Participez aux décisions</h4>
+                        <p class="benefits-text">Votez lors des assemblées générales, choisissez nos candidats, validez notre programme.</p>
+                    </div>
+                </div>
+                
+                <div class="benefits-item reveal">
+                    <div class="benefits-icon">🤝</div>
+                    <div>
+                        <h4 class="benefits-title">Rejoignez une communauté</h4>
+                        <p class="benefits-text">Rencontrez des citoyens engagés qui partagent vos valeurs dans votre section locale.</p>
+                    </div>
+                </div>
+                
+                <div class="benefits-item reveal">
+                    <div class="benefits-icon">📚</div>
+                    <div>
+                        <h4 class="benefits-title">Formez-vous</h4>
+                        <p class="benefits-text">Accédez à nos formations sur l'action politique, la prise de parole, l'organisation.</p>
+                    </div>
+                </div>
+                
+                <div class="benefits-item reveal">
+                    <div class="benefits-icon">💬</div>
+                    <div>
+                        <h4 class="benefits-title">Faites entendre votre voix</h4>
+                        <p class="benefits-text">Proposez des idées, participez aux consultations internes, influencez notre ligne.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="section" id="form">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="text-center mb-5 reveal">
+                    <h2 class="h2">Formulaire d'adhésion</h2>
+                    <p class="text-muted mt-2">Remplissez le formulaire ci-dessous pour rejoindre le mouvement.</p>
+                </div>
+                
+                <form data-validate class="reveal" style="background: var(--color-white); padding: var(--space-2xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+                    <div class="form-group">
+                        <label class="form-label">Formule choisie *</label>
+                        <select class="form-control" required>
+                            <option value="">Sélectionnez une formule</option>
+                            <option value="sympathisant">Sympathisant — 10€/an</option>
+                            <option value="adherent" selected>Adhérent — 30€/an</option>
+                            <option value="soutien">Soutien — 100€/an</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Prénom *</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Nom *</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Téléphone</label>
+                            <input type="tel" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Adresse *</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Code postal *</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Ville *</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Date de naissance *</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Pourquoi souhaitez-vous nous rejoindre ?</label>
+                        <textarea class="form-control" rows="3" placeholder="Partagez vos motivations..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter">Je souhaite recevoir la newsletter</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="volunteer">
+                            <label for="volunteer">Je souhaite m'engager comme bénévole</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">J'accepte les <a href="#" style="color: var(--color-accent);">statuts</a> du mouvement et la <a href="#" style="color: var(--color-accent);">politique de confidentialité</a> *</label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Valider mon adhésion</button>
+                    
+                    <p class="text-center text-muted text-sm mt-3">
+                        Après validation, vous recevrez un email avec les instructions de paiement.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section bg-primary">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h2 class="h3 text-white">Ils ont rejoint le mouvement</h2>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="reveal" style="background: rgba(255,255,255,0.1); padding: var(--space-xl); border-radius: var(--radius-lg);">
+                    <p style="font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg); line-height: 1.7;">
+                        "J'en avais assez de me plaindre devant la télé. Avec le Renouveau, j'agis enfin. L'ambiance dans ma section est formidable."
+                    </p>
+                    <p style="font-weight: 600; color: var(--color-gold);">Marie, 42 ans — Liège</p>
+                </div>
+                
+                <div class="reveal stagger-1" style="background: rgba(255,255,255,0.1); padding: var(--space-xl); border-radius: var(--radius-lg);">
+                    <p style="font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg); line-height: 1.7;">
+                        "Enfin un mouvement où ma voix compte vraiment. Ici, on m'écoute, on débat, on construit ensemble."
+                    </p>
+                    <p style="font-weight: 600; color: var(--color-gold);">Thomas, 28 ans — Bruxelles</p>
+                </div>
+                
+                <div class="reveal stagger-2" style="background: rgba(255,255,255,0.1); padding: var(--space-xl); border-radius: var(--radius-lg);">
+                    <p style="font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg); line-height: 1.7;">
+                        "À 67 ans, je me suis dit qu'il était temps de m'engager pour mes petits-enfants. Je ne regrette pas."
+                    </p>
+                    <p style="font-weight: 600; color: var(--color-gold);">Jean-Pierre, 67 ans — Namur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-mark">R</span>
+                        <span>LE RENOUVEAU</span>
+                    </div>
+                    <p class="footer-desc">Un mouvement politique citoyen pour transformer la Belgique.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Le Mouvement</h4>
+                    <ul class="footer-links">
+                        <li><a href="manifeste.html">Manifeste</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="equipe.html">Équipe</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">S'engager</h4>
+                    <ul class="footer-links">
+                        <li><a href="rejoindre.html">Adhérer</a></li>
+                        <li><a href="agenda.html">Événements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Nous écrire</a></li>
+                    </ul>
+                </div>
+                <div></div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Le Renouveau.</p>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

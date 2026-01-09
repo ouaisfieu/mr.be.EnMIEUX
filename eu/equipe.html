@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Équipe | LE RENOUVEAU</title>
+    <meta name="description" content="Découvrez l'équipe dirigeante du Renouveau : des citoyens engagés au service de l'intérêt général.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon fill='%23f59e0b' points='50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5'/><text x='50' y='62' font-size='40' text-anchor='middle' fill='%230a1628' font-weight='bold'>R</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .team-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-gray-100);
+            transition: var(--transition-base);
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        .team-photo {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .team-photo::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(245, 158, 11, 0.2) 0%, transparent 60%);
+        }
+        .team-info {
+            padding: var(--space-xl);
+            text-align: center;
+        }
+        .team-name {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: normal;
+            color: var(--color-gray-800);
+            margin-bottom: var(--space-xs);
+        }
+        .team-role {
+            color: var(--color-accent);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+        }
+        .team-bio {
+            color: var(--color-gray-500);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--color-gray-100);
+        }
+        .team-social a {
+            width: 36px;
+            height: 36px;
+            background: var(--color-gray-100);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray-500);
+            font-size: 0.875rem;
+            transition: var(--transition-base);
+        }
+        .team-social a:hover {
+            background: var(--color-accent);
+            color: var(--color-white);
+        }
+        .leader-card {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--space-3xl);
+            align-items: center;
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--space-4xl);
+        }
+        .leader-photo {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 0.15);
+        }
+        .leader-info {
+            padding: var(--space-3xl);
+        }
+        @media (max-width: 768px) {
+            .leader-card {
+                grid-template-columns: 1fr;
+            }
+            .leader-photo {
+                aspect-ratio: 16/9;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header dark">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark">R</span>
+                    <span>LE RENOUVEAU</span>
+                </a>
+                <nav class="nav">
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">Accueil</a>
+                        <a href="manifeste.html" class="nav-link">Manifeste</a>
+                        <a href="programme.html" class="nav-link">Programme</a>
+                        <a href="equipe.html" class="nav-link active">Équipe</a>
+                        <a href="actualites.html" class="nav-link">Actualités</a>
+                        <a href="agenda.html" class="nav-link">Agenda</a>
+                    </div>
+                    <a href="rejoindre.html" class="btn btn-primary">Nous rejoindre</a>
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <span class="text-gold font-semibold text-sm fade-up" style="letter-spacing: 0.2em; text-transform: uppercase;">Notre équipe</span>
+            <h1 class="h1 mt-2 fade-up stagger-1">Des citoyens engagés</h1>
+            <p class="lead fade-up stagger-2">Des femmes et des hommes de tous horizons, unis par la même ambition : transformer la Belgique.</p>
+        </div>
+    </section>
+
+    <!-- Leader -->
+    <section class="section">
+        <div class="container">
+            <div class="leader-card reveal">
+                <div class="leader-photo">👤</div>
+                <div class="leader-info">
+                    <span class="text-accent font-semibold text-sm" style="letter-spacing: 0.2em; text-transform: uppercase;">Présidente</span>
+                    <h2 style="font-family: var(--font-body); font-size: 2.5rem; font-weight: 700; text-transform: none; letter-spacing: normal; margin: var(--space-sm) 0 var(--space-lg);">Catherine Dubois</h2>
+                    <p class="lead mb-4" style="color: var(--color-gray-600);">
+                        "Je me suis engagée en politique parce que j'en avais assez de voir notre pays se diviser, nos institutions s'affaiblir, nos concitoyens perdre espoir. Le Renouveau, c'est la preuve que l'on peut faire autrement."
+                    </p>
+                    <p class="text-muted mb-4">
+                        Ancienne entrepreneure dans le secteur technologique, Catherine a fondé et dirigé pendant 15 ans une entreprise de 200 salariés avant de se consacrer à l'engagement citoyen. Mère de trois enfants, elle vit à Namur.
+                    </p>
+                    <div class="flex gap-sm">
+                        <a href="#" style="width: 40px; height: 40px; background: var(--color-gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-gray-600);">𝕏</a>
+                        <a href="#" style="width: 40px; height: 40px; background: var(--color-gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-gray-600);">in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bureau -->
+    <section class="section bg-gray">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <span class="text-accent font-semibold text-sm" style="letter-spacing: 0.2em; text-transform: uppercase;">Le Bureau National</span>
+                <h2 class="h2 mt-2">L'équipe dirigeante</h2>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="team-card reveal stagger-1">
+                    <div class="team-photo">👤</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Marc Janssen</h3>
+                        <p class="team-role">Vice-Président</p>
+                        <p class="team-bio">Professeur d'économie à l'ULB, spécialiste des politiques publiques et de la fiscalité.</p>
+                        <div class="team-social">
+                            <a href="#">𝕏</a>
+                            <a href="#">in</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal stagger-2">
+                    <div class="team-photo">👤</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Sophie Lemaire</h3>
+                        <p class="team-role">Secrétaire Générale</p>
+                        <p class="team-bio">Avocate spécialisée en droit social, ancienne présidente de la Ligue des Droits Humains.</p>
+                        <div class="team-social">
+                            <a href="#">𝕏</a>
+                            <a href="#">in</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal stagger-3">
+                    <div class="team-photo">👤</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Thomas Vandenberghe</h3>
+                        <p class="team-role">Trésorier</p>
+                        <p class="team-bio">Expert-comptable, ancien directeur financier, garant de la transparence de nos comptes.</p>
+                        <div class="team-social">
+                            <a href="#">𝕏</a>
+                            <a href="#">in</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal stagger-4">
+                    <div class="team-photo">👤</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Amira Benali</h3>
+                        <p class="team-role">Porte-parole</p>
+                        <p class="team-bio">Journaliste pendant 10 ans, elle porte la voix du mouvement avec conviction et clarté.</p>
+                        <div class="team-social">
+                            <a href="#">𝕏</a>
+                            <a href="#">in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsables thématiques -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <span class="text-accent font-semibold text-sm" style="letter-spacing: 0.2em; text-transform: uppercase;">Expertise</span>
+                <h2 class="h2 mt-2">Les responsables thématiques</h2>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="team-card reveal">
+                    <div class="team-photo" style="font-size: 4rem;">💼</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Pierre Martin</h3>
+                        <p class="team-role">Économie & Emploi</p>
+                        <p class="team-bio">Ancien chef d'entreprise, expert en développement économique régional.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal">
+                    <div class="team-photo" style="font-size: 4rem;">🌍</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Élise Dumont</h3>
+                        <p class="team-role">Environnement</p>
+                        <p class="team-bio">Ingénieure agronome, militante écologiste depuis 20 ans.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal">
+                    <div class="team-photo" style="font-size: 4rem;">🎓</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Jean-Luc Peeters</h3>
+                        <p class="team-role">Éducation</p>
+                        <p class="team-bio">Directeur d'école pendant 25 ans, pédagogue reconnu.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card reveal">
+                    <div class="team-photo" style="font-size: 4rem;">🏥</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Dr. Marie Claes</h3>
+                        <p class="team-role">Santé</p>
+                        <p class="team-bio">Médecin généraliste, ancienne présidente de l'Ordre des médecins.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="section bg-primary">
+        <div class="container text-center reveal">
+            <h2 class="h2 text-white mb-4">Notre engagement commun</h2>
+            <p style="color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto var(--space-2xl); font-size: 1.125rem; line-height: 1.8;">
+                Tous les membres de notre équipe ont signé la charte éthique du Renouveau : transparence totale sur leur patrimoine, refus du cumul des mandats, engagement à ne jamais voter contre le programme validé par les adhérents.
+            </p>
+            <a href="#" class="btn btn-primary">Consulter notre charte éthique</a>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2 class="cta-title h2">Envie de nous rejoindre ?</h2>
+                <p class="cta-text">Nous cherchons des talents pour renforcer notre équipe. Bénévoles, experts, communicants : toutes les compétences sont les bienvenues.</p>
+                <a href="rejoindre.html" class="btn btn-lg" style="background: var(--color-primary); color: var(--color-white);">Rejoindre le mouvement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-mark">R</span>
+                        <span>LE RENOUVEAU</span>
+                    </div>
+                    <p class="footer-desc">Un mouvement politique citoyen pour transformer la Belgique.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Le Mouvement</h4>
+                    <ul class="footer-links">
+                        <li><a href="manifeste.html">Manifeste</a></li>
+                        <li><a href="programme.html">Programme</a></li>
+                        <li><a href="equipe.html">Équipe</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">S'engager</h4>
+                    <ul class="footer-links">
+                        <li><a href="rejoindre.html">Adhérer</a></li>
+                        <li><a href="agenda.html">Événements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Nous écrire</a></li>
+                    </ul>
+                </div>
+                <div></div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Le Renouveau.</p>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
