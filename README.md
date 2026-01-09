@@ -45,7 +45,7 @@
 
 ## 🎯 À propos
 
-<img align="right" src="https://via.placeholder.com/300x200/004a99/ffffff?text=Preview" alt="Preview" width="300">
+<img align="right" src="https://ouaisfieu.github.io/mr.be.EnMIEUX/img/preview.jpg" alt="Preview" width="300">
 
 **MR EN MIEUX** est un site web fan club non-officiel inspiré du design du [Mouvement Réformateur](https://www.mr.be/) belge. Ce projet est une démonstration de développement web frontend moderne avec HTML5, CSS3 et JavaScript vanilla.
 
