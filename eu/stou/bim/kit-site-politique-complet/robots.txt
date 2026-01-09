@@ -1,0 +1,98 @@
+# ============================================
+# ROBOTS.TXT - Mon Mouvement
+# ============================================
+# Ce fichier indique aux moteurs de recherche
+# quelles pages indexer ou ignorer.
+# ============================================
+
+# Autoriser tous les robots
+User-agent: *
+
+# Autoriser tout le site
+Allow: /
+
+# Bloquer les pages d'administration (si applicable)
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /login/
+Disallow: /membre/dashboard/
+
+# Bloquer les fichiers temporaires
+Disallow: /*.tmp$
+Disallow: /*?preview=*
+Disallow: /*?draft=*
+
+# Bloquer les pages de recherche interne (évite contenu dupliqué)
+Disallow: /search?
+Disallow: /*?s=*
+
+# Bloquer les paramètres de tracking (évite contenu dupliqué)
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?fbclid=*
+
+# ============================================
+# SITEMAP
+# ============================================
+Sitemap: https://www.monmouvement.be/sitemap.xml
+
+# ============================================
+# CRAWL DELAY (optionnel)
+# ============================================
+# Demande aux robots d'attendre 1 seconde entre chaque requête
+# Utile si ton hébergement est limité
+# Crawl-delay: 1
+
+# ============================================
+# RÈGLES SPÉCIFIQUES PAR ROBOT
+# ============================================
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloquer les robots malveillants connus
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# ============================================
+# NOTES
+# ============================================
+# 
+# 1. Remplace "monmouvement.be" par ton vrai domaine
+# 
+# 2. Après mise en ligne, soumet ton sitemap à:
+#    - Google Search Console: https://search.google.com/search-console
+#    - Bing Webmaster Tools: https://www.bing.com/webmasters
+# 
+# 3. Teste ton robots.txt avec:
+#    https://www.google.com/webmasters/tools/robots-testing-tool
+#
+# 4. Ce fichier doit être à la RACINE de ton site:
+#    https://www.monmouvement.be/robots.txt
+#

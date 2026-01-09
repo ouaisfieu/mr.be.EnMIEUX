@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- PAGE D'ACCUEIL -->
+    <url>
+        <loc>https://www.monmouvement.be/</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://www.monmouvement.be/images/og-image.jpg</image:loc>
+            <image:title>Mon Mouvement - Pour une Belgique qui nous ressemble</image:title>
+        </image:image>
+    </url>
+    
+    <!-- PAGES PRINCIPALES -->
+    <url>
+        <loc>https://www.monmouvement.be/mouvement</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/programme</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/valeurs</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/equipe</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/president</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- ACTUALITÉS -->
+    <url>
+        <loc>https://www.monmouvement.be/actualites</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/communiques</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/medias</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/discours</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- AGENDA -->
+    <url>
+        <loc>https://www.monmouvement.be/agenda</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- ENGAGEMENT -->
+    <url>
+        <loc>https://www.monmouvement.be/adhesion</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/contact</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/membre</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- LÉGAL -->
+    <url>
+        <loc>https://www.monmouvement.be/mentions-legales</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/confidentialite</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.monmouvement.be/cookies</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- 
+    ============================================
+    ARTICLES - AJOUTER ICI TES ARTICLES
+    ============================================
+    Exemple:
+    <url>
+        <loc>https://www.monmouvement.be/actualites/titre-de-l-article</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://www.monmouvement.be/images/articles/image.jpg</image:loc>
+            <image:title>Titre de l'article</image:title>
+        </image:image>
+    </url>
+    -->
+    
+    <!-- 
+    ============================================
+    ÉVÉNEMENTS - AJOUTER ICI TES ÉVÉNEMENTS
+    ============================================
+    Exemple:
+    <url>
+        <loc>https://www.monmouvement.be/agenda/nom-evenement</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    -->
+
+</urlset>
