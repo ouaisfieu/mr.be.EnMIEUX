@@ -16,7 +16,7 @@
 <br />
 
 <p align="center">
-  <img src="https://via.placeholder.com/600x300/004a99/ffffff?text=MR+EN+MIEUX" alt="MR EN MIEUX Banner" width="600">
+  <img src="https://ouaisfieu.github.io/mr.be.EnMIEUX/img/mrEnMIEUX.jpg" alt="MR EN MIEUX Banner" width="600">
 </p>
 
 **Site web fan club pour le mouvement politique MR (Belgique)**
