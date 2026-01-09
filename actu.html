@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités - MR EN MIEUX</title>
+    <meta name="description" content="Toutes les actualités du Mouvement Radical : communiqués, discours, prises de position.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid #e0e0e0;
+            background: var(--mr-white);
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--mr-blue);
+            background: var(--mr-blue);
+            color: var(--mr-white);
+        }
+        .featured-article {
+            background: var(--mr-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .featured-image {
+            background: linear-gradient(135deg, var(--mr-blue) 0%, var(--mr-blue-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.2);
+            min-height: 400px;
+        }
+        .featured-content {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .featured-content .card-tag {
+            width: fit-content;
+        }
+        .featured-content h2 {
+            font-size: 28px;
+            color: var(--mr-text);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .featured-content p {
+            color: var(--mr-gray);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        @media (max-width: 768px) {
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+            .featured-image {
+                min-height: 250px;
+            }
+            .featured-content {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <a href="#">Espace Membre</a>
+            <div class="social-icons">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Twitter">𝕏</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="YouTube">▶</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-mr">MR</span>
+                <span class="logo-plus">+</span>
+            </a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="mainNav">
+                <a href="index.html">Accueil</a>
+                <a href="mouvement.html">Mouvement</a>
+                <a href="actu.html" class="active">Actu</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="actions.html">Nos actions</a>
+                <a href="contact.html">Contact</a>
+                <a href="adhesion.html" class="btn-adhesion">Adhésion</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Actualités</h1>
+            <p>Suivez nos actions, nos prises de position et nos communiqués</p>
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>›</span>
+                <span>Actualités</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="section-sm">
+        <div class="container">
+            <div class="filter-bar">
+                <button class="filter-btn active">Tout</button>
+                <button class="filter-btn">Communiqués</button>
+                <button class="filter-btn">Discours</button>
+                <button class="filter-btn">Dans les médias</button>
+                <button class="filter-btn">Programme</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="section-sm">
+        <div class="container">
+            <article class="featured-article">
+                <div class="featured-image">📢</div>
+                <div class="featured-content">
+                    <span class="card-tag">À la Une</span>
+                    <h2>Le Mouvement Radical dévoile ses 50 propositions pour une Belgique plus juste</h2>
+                    <p>Après des mois de consultation citoyenne à travers toute la Wallonie et Bruxelles, le Mouvement Radical présente son programme complet. 50 propositions concrètes pour transformer notre société et redonner le pouvoir aux citoyens.</p>
+                    <div class="card-meta">
+                        <span class="avatar">MR</span>
+                        <span>09 janvier 2026 • 5 min de lecture</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-image">📰</div>
+                    <div class="card-content">
+                        <span class="card-tag">Communiqué</span>
+                        <h3>MR+ lance sa grande consultation citoyenne dans toute la Wallonie</h3>
+                        <p>Plus de 50 rencontres prévues pour écouter les préoccupations des citoyens et construire ensemble notre programme.</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>08/01/2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">🎤</div>
+                    <div class="card-content">
+                        <span class="card-tag">Discours</span>
+                        <h3>« Ensemble, nous pouvons changer les choses » - Discours de rentrée</h3>
+                        <p>Le président du mouvement a présenté les grandes lignes de l'action politique pour l'année 2026.</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>07/01/2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">📊</div>
+                    <div class="card-content">
+                        <span class="card-tag">Programme</span>
+                        <h3>50 propositions concrètes pour une économie au service de tous</h3>
+                        <p>Notre programme économique détaillé pour relancer la croissance et l'emploi en Belgique.</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>05/01/2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">📺</div>
+                    <div class="card-content">
+                        <span class="card-tag">Dans les médias</span>
+                        <h3>Interview exclusive : notre vision pour la Belgique de demain</h3>
+                        <p>La présidente du mouvement était l'invitée du journal télévisé pour présenter notre projet.</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>03/01/2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">🏛️</div>
+                    <div class="card-content">
+                        <span class="card-tag">Communiqué</span>
+                        <h3>Réforme fiscale : nos propositions pour plus de justice</h3>
+                        <p>Le Mouvement Radical présente son plan pour une fiscalité plus équitable et plus simple.</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>28/12/2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">🌍</div>
+                    <div class="card-content">
+                        <span class="card-tag">Programme</span>
+                        <h3>Transition écologique : un plan ambitieux mais réaliste</h3>
+                        <p>Nos propositions pour concilier économie et écologie, sans sacrifier l'un pour l'autre.</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>22/12/2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">🎓</div>
+                    <div class="card-content">
+                        <span class="card-tag">Communiqué</span>
+                        <h3>Éducation : pour une école qui prépare à l'avenir</h3>
+                        <p>Notre vision pour moderniser l'enseignement et donner à chaque enfant les clés de la réussite.</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>18/12/2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">🏥</div>
+                    <div class="card-content">
+                        <span class="card-tag">Programme</span>
+                        <h3>Santé : renforcer notre système de soins</h3>
+                        <p>Investir dans la santé publique et garantir l'accès aux soins pour tous les citoyens.</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>15/12/2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">🎙️</div>
+                    <div class="card-content">
+                        <span class="card-tag">Discours</span>
+                        <h3>Clôture du congrès fondateur : retour sur les moments forts</h3>
+                        <p>Revivez les temps forts de notre premier congrès national à Bruxelles.</p>
+                        <div class="card-meta">
+                            <span class="avatar">MR</span>
+                            <span>10/12/2025</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="text-center mt-5">
+                <div style="display: inline-flex; gap: 10px;">
+                    <button class="btn btn-sm btn-primary">1</button>
+                    <button class="btn btn-sm btn-outline-blue">2</button>
+                    <button class="btn btn-sm btn-outline-blue">3</button>
+                    <button class="btn btn-sm btn-outline-blue">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="grid-2" style="align-items: center;">
+                    <div>
+                        <h3 style="font-size: 24px; margin-bottom: 10px; color: var(--mr-blue);">Ne manquez aucune actualité</h3>
+                        <p style="color: var(--mr-gray);">Inscrivez-vous à notre newsletter pour recevoir nos dernières nouvelles.</p>
+                    </div>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); subscribeNewsletter(this.querySelector('input').value);">
+                        <input type="email" placeholder="Votre adresse email" required>
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mr">MR+</div>
+                    <p>Le Mouvement Radical - Pour une politique qui vous ressemble, qui vous rassemble. Site fan non-officiel.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="mouvement.html">Mouvement</a></li>
+                        <li><a href="actions.html">Nos actions</a></li>
+                        <li><a href="actu.html">Actualités</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Ressources</h4>
+                    <ul class="footer-links">
+                        <li><a href="actions.html">Programme</a></li>
+                        <li><a href="actu.html">Discours</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@mrenmieux.be">contact@mrenmieux.be</a></li>
+                        <li><a href="contact.html">Bruxelles, Belgique</a></li>
+                        <li><a href="contact.html">Presse</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MR EN MIEUX - Le Mouvement Radical. Site fan non-officiel.</p>
+                <div class="footer-social">
+                    <a href="#">f</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">📷</a>
+                    <a href="#">in</a>
+                    <a href="#">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Filter buttons functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
