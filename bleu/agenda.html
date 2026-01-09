@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr-BE" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agenda | MR EN MIEUX - Le Mouvement Radical</title>
+    <meta name="description" content="Ateliers, conférences et formations citoyennes. Retrouvez tous nos événements à Bruxelles et en Wallonie.">
+    <link rel="shortcut icon" href="https://www.mr.be/wp-content/uploads/2023/09/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root{--primary:#6B8E6B;--primary-dark:#4A6B4A;--primary-light:#8FBC8F;--secondary:#9B7BB8;--secondary-dark:#7B5B98;--bg-body:#f8f9fa;--bg-white:#ffffff;--bg-gray:#f3f4f6;--bg-dark:#1a1a2e;--text-dark:#1a1a2e;--text-body:#4a4a6a;--text-light:#6b6b8b;--text-white:#ffffff;--shadow-sm:0 2px 10px rgba(0,0,0,0.08);--shadow-md:0 5px 30px rgba(0,0,0,0.1);--shadow-lg:0 15px 50px rgba(0,0,0,0.12);--transition:all 0.3s ease}
+    [data-theme="dark"]{--bg-body:#0d0d1a;--bg-white:#1a1a2e;--bg-gray:#252542;--text-dark:#f0f0f5;--text-body:#c0c0d0;--text-light:#9090a0}
+    [data-theme="neon"]{--primary:#00ff88;--primary-dark:#00cc66;--secondary:#ff00ff;--bg-body:#0a0a0f;--bg-white:#12121f;--bg-gray:#1a1a2a;--text-dark:#ffffff;--text-body:#c0c0d0}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Open Sans',system-ui,sans-serif;font-size:14px;line-height:1.8;color:var(--text-body);background:var(--bg-body);transition:var(--transition)}
+    a{text-decoration:none;color:inherit;transition:var(--transition)}
+    img{max-width:100%;height:auto;display:block}
+    h1,h2,h3,h4{font-weight:700;color:var(--text-dark);line-height:1.3}
+    .container{max-width:1400px;margin:0 auto;padding:0 60px}
+    .theme-switcher{position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;gap:5px;background:var(--bg-white);padding:8px;border-radius:30px;box-shadow:var(--shadow-md)}
+    .theme-btn{width:32px;height:32px;border:none;border-radius:50%;cursor:pointer;font-size:12px;transition:var(--transition);opacity:0.6}
+    .theme-btn:hover,.theme-btn.active{opacity:1;transform:scale(1.1)}
+    .theme-btn.light{background:#f0f0f0}.theme-btn.dark{background:#1a1a2e}.theme-btn.neon{background:#0a0a0f;border:1px solid #00ff88}.theme-btn.disco{background:linear-gradient(45deg,#ff006e,#8338ec)}
+    #header{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--bg-white);height:70px;box-shadow:var(--shadow-md)}
+    .header-inner{height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+    .nav-left,.nav-right{position:absolute;display:flex;align-items:center;gap:5px}
+    .nav-left{left:60px}.nav-right{right:60px}
+    .logo{display:flex;flex-direction:column;align-items:center;line-height:1.1}
+    .logo-main{font-size:24px;font-weight:700;color:var(--primary)}
+    .logo-sub{font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-light)}
+    .nav-link{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:0 15px;height:70px;display:flex;align-items:center;color:var(--text-dark)}
+    .nav-link:hover,.nav-link.active{color:var(--primary)}
+    .btn-adhesion{background:var(--primary);color:var(--text-white)!important;padding:12px 20px;font-size:11px;font-weight:700;text-transform:uppercase;margin-left:10px;border-radius:3px}
+    .btn-adhesion:hover{background:var(--primary-dark)}
+    .social-header{display:flex;gap:5px;margin-left:15px}
+    .social-header a{color:var(--text-dark);font-size:12px;padding:5px}
+    .social-header a:hover{color:var(--primary)}
+    .mobile-toggle{display:none;width:25px;height:18px;flex-direction:column;justify-content:space-between;cursor:pointer;position:absolute;right:20px}
+    .mobile-toggle span{height:2px;background:var(--text-dark)}
+    .page-header{background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);padding:150px 0 80px;text-align:center}
+    .page-header h1{font-size:42px;color:var(--text-white);margin-bottom:15px}
+    .page-header p{font-size:16px;color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto}
+    .section{padding:80px 0}
+    .section-gray{background:var(--bg-gray)}
+
+    /* Events Grid */
+    .events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+    .event-card{background:var(--bg-white);overflow:hidden;border-radius:5px;transition:var(--transition)}
+    .event-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+    .event-image{position:relative;aspect-ratio:16/10;overflow:hidden}
+    .event-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+    .event-card:hover .event-image img{transform:scale(1.05)}
+    .event-date-badge{position:absolute;bottom:0;left:20px;background:var(--secondary);color:var(--text-white);padding:12px 18px;text-align:center;border-radius:5px 5px 0 0}
+    .event-day{font-size:28px;font-weight:700;line-height:1}
+    .event-month{font-size:11px;text-transform:uppercase;letter-spacing:1px}
+    .event-type{position:absolute;top:12px;right:12px;background:var(--primary);color:var(--text-white);padding:5px 12px;font-size:9px;font-weight:700;text-transform:uppercase;border-radius:3px}
+    .event-content{padding:25px}
+    .event-title{font-size:18px;color:var(--text-dark);margin-bottom:10px}
+    .event-card:hover .event-title{color:var(--primary)}
+    .event-info{font-size:13px;color:var(--text-body);margin-bottom:15px}
+    .event-info i{color:var(--primary);margin-right:8px;width:16px}
+    .event-info div{margin-bottom:8px;display:flex;align-items:flex-start}
+    .event-meta{display:flex;justify-content:space-between;align-items:center;padding-top:15px;border-top:1px solid var(--bg-gray)}
+    .event-spots{font-size:12px;color:var(--text-light)}
+    .event-spots.limited{color:#e74c3c}
+    .btn-event{padding:10px 20px;background:var(--primary);color:var(--text-white);font-size:11px;font-weight:700;text-transform:uppercase;border-radius:3px}
+    .btn-event:hover{background:var(--primary-dark)}
+
+    /* Past Events Note */
+    .past-events-note{background:var(--bg-white);padding:30px;border-radius:5px;text-align:center;margin-top:50px;border-left:4px solid var(--secondary)}
+    .past-events-note h3{font-size:18px;margin-bottom:10px}
+    .past-events-note p{color:var(--text-body);font-size:14px}
+    .past-events-note a{color:var(--primary);font-weight:600}
+
+    /* CTA */
+    .cta{padding:80px 0;background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);text-align:center}
+    .cta h2{font-size:32px;color:var(--text-white);margin-bottom:15px}
+    .cta p{font-size:16px;color:rgba(255,255,255,0.9);margin-bottom:30px}
+    .btn-cta{display:inline-block;padding:16px 35px;font-size:12px;font-weight:700;text-transform:uppercase;border-radius:3px;background:var(--text-white);color:var(--primary)}
+    .btn-cta:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+
+    footer{background:var(--bg-dark);color:var(--text-white);padding:60px 0 30px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:40px}
+    .footer-brand .logo-footer{font-size:24px;font-weight:700;color:var(--primary-light);margin-bottom:5px}
+    .footer-brand .tagline-footer{font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:15px}
+    .footer-desc{color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:20px}
+    .footer-social{display:flex;gap:8px}
+    .footer-social a{width:36px;height:36px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:var(--text-white);font-size:13px;border-radius:50%}
+    .footer-social a:hover{background:var(--primary)}
+    .footer-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:10px}
+    .footer-links a{color:rgba(255,255,255,0.6);font-size:13px}
+    .footer-links a:hover{color:var(--primary-light);padding-left:5px}
+    .footer-bottom{padding-top:25px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.5);flex-wrap:wrap;gap:15px}
+    .footer-disclaimer{font-size:11px;color:rgba(255,255,255,0.4)}
+    .footer-legal{display:flex;gap:20px}
+    .footer-legal a:hover{color:var(--text-white)}
+
+    @media(max-width:1200px){.container{padding:0 30px}.nav-left{left:30px}.nav-right{right:30px}.events-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:1024px){.nav-left,.nav-right{display:none}.mobile-toggle{display:flex}.header-inner{justify-content:center}.events-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.container{padding:0 20px}.page-header h1{font-size:32px}.footer-grid{grid-template-columns:1fr;text-align:center}.footer-social{justify-content:center}.footer-bottom{flex-direction:column;text-align:center}}
+    </style>
+</head>
+<body>
+
+    <div class="theme-switcher">
+        <button class="theme-btn light active" data-theme="light" title="Clair">☀️</button>
+        <button class="theme-btn dark" data-theme="dark" title="Sombre">🌙</button>
+        <button class="theme-btn neon" data-theme="neon" title="Néon">⚡</button>
+        <button class="theme-btn disco" data-theme="disco" title="Disco">🪩</button>
+    </div>
+
+    <header id="header">
+        <div class="header-inner container">
+            <nav class="nav-left">
+                <a href="mouvement.html" class="nav-link">Mouvement</a>
+                <a href="ressources.html" class="nav-link">Ressources</a>
+                <a href="agenda.html" class="nav-link active">Agenda</a>
+            </nav>
+            <a href="index.html" class="logo">
+                <span class="logo-main">!MR++</span>
+                <span class="logo-sub">Le Mouvement Radical</span>
+            </a>
+            <nav class="nav-right">
+                <a href="equipe.html" class="nav-link">Équipe</a>
+                <a href="programme.html" class="nav-link">Programme</a>
+                <a href="adhesion.html" class="btn-adhesion">Rejoindre</a>
+                <div class="social-header">
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </nav>
+            <div class="mobile-toggle"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Agenda</h1>
+            <p>Ateliers, conférences et formations. Tous nos événements sont gratuits et ouverts à tous.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="events-grid">
+                
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600" alt="">
+                        <div class="event-date-badge">
+                            <div class="event-day">18</div>
+                            <div class="event-month">Jan</div>
+                        </div>
+                        <span class="event-type">Atelier</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Décrypter un JT en 1 heure</h3>
+                        <div class="event-info">
+                            <div><i class="far fa-clock"></i> 14h00 - 16h00</div>
+                            <div><i class="fas fa-map-marker-alt"></i> Maison du Peuple, Bruxelles</div>
+                        </div>
+                        <div class="event-meta">
+                            <span class="event-spots">12 places restantes</span>
+                            <a href="#" class="btn-event">S'inscrire</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600" alt="">
+                        <div class="event-date-badge">
+                            <div class="event-day">25</div>
+                            <div class="event-month">Jan</div>
+                        </div>
+                        <span class="event-type">Conférence</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Les coulisses du lobbying en Belgique</h3>
+                        <div class="event-info">
+                            <div><i class="far fa-clock"></i> 19h00 - 21h00</div>
+                            <div><i class="fas fa-map-marker-alt"></i> Université Populaire, Bruxelles</div>
+                        </div>
+                        <div class="event-meta">
+                            <span class="event-spots">45 places restantes</span>
+                            <a href="#" class="btn-event">S'inscrire</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600" alt="">
+                        <div class="event-date-badge">
+                            <div class="event-day">02</div>
+                            <div class="event-month">Fév</div>
+                        </div>
+                        <span class="event-type">Formation</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Organiser une action citoyenne</h3>
+                        <div class="event-info">
+                            <div><i class="far fa-clock"></i> 10h00 - 17h00</div>
+                            <div><i class="fas fa-map-marker-alt"></i> Centre Culturel, Liège</div>
+                        </div>
+                        <div class="event-meta">
+                            <span class="event-spots limited">5 places restantes</span>
+                            <a href="#" class="btn-event">S'inscrire</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600" alt="">
+                        <div class="event-date-badge">
+                            <div class="event-day">08</div>
+                            <div class="event-month">Fév</div>
+                        </div>
+                        <span class="event-type">Atelier</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Fact-checking : outils et méthodes</h3>
+                        <div class="event-info">
+                            <div><i class="far fa-clock"></i> 14h00 - 17h00</div>
+                            <div><i class="fas fa-map-marker-alt"></i> Bibliothèque Centrale, Namur</div>
+                        </div>
+                        <div class="event-meta">
+                            <span class="event-spots">20 places restantes</span>
+                            <a href="#" class="btn-event">S'inscrire</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600" alt="">
+                        <div class="event-date-badge">
+                            <div class="event-day">15</div>
+                            <div class="event-month">Fév</div>
+                        </div>
+                        <span class="event-type">Atelier</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Analyser un programme électoral</h3>
+                        <div class="event-info">
+                            <div><i class="far fa-clock"></i> 10h00 - 13h00</div>
+                            <div><i class="fas fa-map-marker-alt"></i> Maison de quartier, Charleroi</div>
+                        </div>
+                        <div class="event-meta">
+                            <span class="event-spots">15 places restantes</span>
+                            <a href="#" class="btn-event">S'inscrire</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600" alt="">
+                        <div class="event-date-badge">
+                            <div class="event-day">22</div>
+                            <div class="event-month">Fév</div>
+                        </div>
+                        <span class="event-type">Conférence</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Comprendre le financement des partis</h3>
+                        <div class="event-info">
+                            <div><i class="far fa-clock"></i> 19h30 - 21h30</div>
+                            <div><i class="fas fa-map-marker-alt"></i> Salle La Madeleine, Bruxelles</div>
+                        </div>
+                        <div class="event-meta">
+                            <span class="event-spots">60 places restantes</span>
+                            <a href="#" class="btn-event">S'inscrire</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="past-events-note">
+                <h3>Vous avez raté un événement ?</h3>
+                <p>Pas de panique ! Les replays de nos conférences et les supports de nos ateliers sont disponibles dans nos <a href="ressources.html">ressources</a>.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Vous voulez organiser un atelier près de chez vous ?</h2>
+            <p>Nous venons dans toute la Wallonie et à Bruxelles. Contactez-nous pour organiser un événement dans votre commune.</p>
+            <a href="contact.html" class="btn-cta">Nous contacter</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-footer">!MR++</div>
+                    <div class="tagline-footer">MR EN MIEUX • Le Mouvement Radical</div>
+                    <p class="footer-desc">Éducation populaire et citoyenne. Comprendre pour agir, agir pour changer.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Mouvement</h4>
+                    <ul class="footer-links">
+                        <li><a href="mouvement.html">Notre histoire</a></li>
+                        <li><a href="equipe.html">L'équipe</a></li>
+                        <li><a href="programme.html">Notre approche</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Ressources</h4>
+                    <ul class="footer-links">
+                        <li><a href="ressources.html">Décryptages</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                        <li><a href="outils.html">Outils</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Nous écrire</a></li>
+                        <li><a href="adhesion.html">Rejoindre</a></li>
+                        <li><a href="presse.html">Presse</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-disclaimer">Site parodique à vocation éducative. Non affilié au MR officiel. #!BIM 💚💜</p>
+                <div class="footer-legal">
+                    <a href="mentions.html">Mentions légales</a>
+                    <a href="confidentialite.html">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const themeBtns=document.querySelectorAll('.theme-btn');const html=document.documentElement;themeBtns.forEach(btn=>{btn.addEventListener('click',()=>{const theme=btn.dataset.theme;html.setAttribute('data-theme',theme);themeBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');localStorage.setItem('mr-theme',theme)})});const savedTheme=localStorage.getItem('mr-theme');if(savedTheme){html.setAttribute('data-theme',savedTheme);themeBtns.forEach(btn=>{btn.classList.toggle('active',btn.dataset.theme===savedTheme)})}
+    </script>
+</body>
+</html>

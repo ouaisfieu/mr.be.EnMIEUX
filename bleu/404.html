@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr-BE" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page non trouvée - MR EN MIEUX</title>
+    <meta name="robots" content="noindex">
+    <link rel="shortcut icon" href="https://www.mr.be/wp-content/uploads/2023/09/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root {
+        --primary: #6B8E6B;
+        --primary-dark: #4A6B4A;
+        --primary-light: #8FBC8F;
+        --secondary: #9B7BB8;
+        --secondary-dark: #7B5B98;
+        --bg-body: #f8f9fa;
+        --bg-white: #ffffff;
+        --bg-dark: #1a1a2e;
+        --text-dark: #1a1a2e;
+        --text-body: #4a4a6a;
+        --text-light: #6b6b8b;
+        --text-white: #ffffff;
+        --shadow-md: 0 5px 30px rgba(0,0,0,0.1);
+        --transition: all 0.3s ease;
+    }
+
+    [data-theme="dark"] {
+        --bg-body: #0d0d1a;
+        --bg-white: #1a1a2e;
+        --text-dark: #f0f0f5;
+        --text-body: #c0c0d0;
+    }
+
+    [data-theme="neon"] {
+        --primary: #00ff88;
+        --secondary: #ff00ff;
+        --bg-body: #0a0a0f;
+        --bg-white: #12121f;
+        --text-dark: #ffffff;
+        --text-body: #c0c0d0;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Open Sans', system-ui, sans-serif;
+        background: var(--bg-body);
+        color: var(--text-body);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition);
+    }
+
+    /* Header */
+    #header {
+        background: var(--bg-white);
+        height: 70px;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-inner {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.1;
+    }
+
+    .logo-main {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .logo-sub {
+        font-size: 8px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--text-light);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 5px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 10px 15px;
+        color: var(--text-dark);
+        transition: var(--transition);
+    }
+
+    .nav-link:hover {
+        color: var(--primary);
+    }
+
+    /* Main Content */
+    main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        position: relative;
+    }
+
+    main::before {
+        content: '#!BIM';
+        position: absolute;
+        font-size: 15vw;
+        font-weight: 900;
+        opacity: 0.05;
+        color: var(--text-white);
+        pointer-events: none;
+    }
+
+    .error-content {
+        text-align: center;
+        max-width: 600px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .error-code {
+        font-size: clamp(100px, 25vw, 180px);
+        font-weight: 700;
+        color: var(--text-white);
+        line-height: 1;
+        margin-bottom: 20px;
+        text-shadow: 0 5px 30px rgba(0,0,0,0.2);
+    }
+
+    .error-title {
+        font-size: clamp(24px, 4vw, 32px);
+        font-weight: 700;
+        color: var(--text-white);
+        margin-bottom: 15px;
+    }
+
+    .error-text {
+        font-size: 16px;
+        color: rgba(255,255,255,0.9);
+        margin-bottom: 40px;
+        line-height: 1.8;
+    }
+
+    .error-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 30px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-radius: 3px;
+        transition: var(--transition);
+    }
+
+    .btn-white {
+        background: var(--text-white);
+        color: var(--primary);
+    }
+
+    .btn-white:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--text-white);
+        border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-outline:hover {
+        background: var(--text-white);
+        color: var(--primary);
+        border-color: var(--text-white);
+    }
+
+    /* Search Form */
+    .search-form {
+        margin-top: 40px;
+        display: flex;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search-form input {
+        flex: 1;
+        padding: 14px 20px;
+        font-size: 14px;
+        border: none;
+        border-radius: 3px 0 0 3px;
+        font-family: inherit;
+    }
+
+    .search-form input:focus {
+        outline: none;
+    }
+
+    .search-form button {
+        padding: 14px 20px;
+        background: var(--bg-dark);
+        color: var(--text-white);
+        border: none;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .search-form button:hover {
+        background: #000;
+    }
+
+    /* Footer */
+    footer {
+        background: var(--bg-dark);
+        color: var(--text-white);
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    .footer-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-brand {
+        font-weight: 700;
+        color: var(--primary-light);
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
+        color: rgba(255,255,255,0.6);
+        transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: var(--text-white);
+    }
+
+    .footer-disclaimer {
+        width: 100%;
+        font-size: 11px;
+        color: rgba(255,255,255,0.4);
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Theme Switcher */
+    .theme-switcher {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        gap: 5px;
+        background: var(--bg-white);
+        padding: 8px;
+        border-radius: 30px;
+        box-shadow: var(--shadow-md);
+    }
+
+    .theme-btn {
+        width: 28px;
+        height: 28px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 11px;
+        transition: var(--transition);
+        opacity: 0.6;
+    }
+
+    .theme-btn:hover, .theme-btn.active {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    .theme-btn.light { background: #f0f0f0; }
+    .theme-btn.dark { background: #1a1a2e; }
+    .theme-btn.neon { background: #0a0a0f; border: 1px solid #00ff88; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .header-inner {
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        .error-buttons {
+            flex-direction: column;
+        }
+        
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .footer-inner {
+            flex-direction: column;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <button class="theme-btn light active" data-theme="light" title="Clair">☀️</button>
+        <button class="theme-btn dark" data-theme="dark" title="Sombre">🌙</button>
+        <button class="theme-btn neon" data-theme="neon" title="Néon">⚡</button>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-main">!MR++</span>
+                <span class="logo-sub">Le Mouvement Radical</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="ressources.html" class="nav-link">Ressources</a>
+                <a href="agenda.html" class="nav-link">Agenda</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page non trouvée</h1>
+            <p class="error-text">
+                La page que vous recherchez n'existe pas ou a été déplacée.<br>
+                Pas de panique, ça arrive même aux meilleurs.
+            </p>
+            <div class="error-buttons">
+                <a href="index.html" class="btn btn-white">
+                    <i class="fas fa-home"></i> Retour à l'accueil
+                </a>
+                <a href="contact.html" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i> Nous contacter
+                </a>
+            </div>
+            <form class="search-form" action="#" method="get">
+                <input type="text" name="s" placeholder="Rechercher sur le site...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">!MR++ • MR EN MIEUX</div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="ressources.html">Ressources</a>
+                <a href="mentions.html">Mentions légales</a>
+            </div>
+            <p class="footer-disclaimer">
+                Site parodique à vocation éducative. Non affilié au MR officiel. #!BIM 💚💜
+            </p>
+        </div>
+    </footer>
+
+    <script>
+    // Theme Switcher
+    const themeBtns = document.querySelectorAll('.theme-btn');
+    const html = document.documentElement;
+
+    themeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const theme = btn.dataset.theme;
+            html.setAttribute('data-theme', theme);
+            themeBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            localStorage.setItem('mr-theme', theme);
+        });
+    });
+
+    const savedTheme = localStorage.getItem('mr-theme');
+    if (savedTheme) {
+        html.setAttribute('data-theme', savedTheme);
+        themeBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.theme === savedTheme);
+        });
+    }
+    </script>
+
+</body>
+</html>

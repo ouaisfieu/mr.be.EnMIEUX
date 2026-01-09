@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr-BE" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notre Approche | MR EN MIEUX - Le Mouvement Radical</title>
+    <meta name="description" content="Découvrez notre approche pédagogique : décryptage, esprit critique, outils concrets pour comprendre le monde politique.">
+    <link rel="shortcut icon" href="https://www.mr.be/wp-content/uploads/2023/09/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root{--primary:#6B8E6B;--primary-dark:#4A6B4A;--primary-light:#8FBC8F;--secondary:#9B7BB8;--secondary-dark:#7B5B98;--secondary-light:#C8A8E0;--bg-body:#f8f9fa;--bg-white:#ffffff;--bg-gray:#f3f4f6;--bg-dark:#1a1a2e;--text-dark:#1a1a2e;--text-body:#4a4a6a;--text-light:#6b6b8b;--text-white:#ffffff;--shadow-sm:0 2px 10px rgba(0,0,0,0.08);--shadow-md:0 5px 30px rgba(0,0,0,0.1);--shadow-lg:0 15px 50px rgba(0,0,0,0.12);--transition:all 0.3s ease}
+    [data-theme="dark"]{--bg-body:#0d0d1a;--bg-white:#1a1a2e;--bg-gray:#252542;--text-dark:#f0f0f5;--text-body:#c0c0d0;--text-light:#9090a0}
+    [data-theme="neon"]{--primary:#00ff88;--primary-dark:#00cc66;--secondary:#ff00ff;--bg-body:#0a0a0f;--bg-white:#12121f;--bg-gray:#1a1a2a;--text-dark:#ffffff;--text-body:#c0c0d0}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Open Sans',system-ui,sans-serif;font-size:14px;line-height:1.8;color:var(--text-body);background:var(--bg-body);transition:var(--transition)}
+    a{text-decoration:none;color:inherit;transition:var(--transition)}
+    img{max-width:100%;height:auto;display:block}
+    h1,h2,h3,h4{font-weight:700;color:var(--text-dark);line-height:1.3}
+    .container{max-width:1400px;margin:0 auto;padding:0 60px}
+    .theme-switcher{position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;gap:5px;background:var(--bg-white);padding:8px;border-radius:30px;box-shadow:var(--shadow-md)}
+    .theme-btn{width:32px;height:32px;border:none;border-radius:50%;cursor:pointer;font-size:12px;transition:var(--transition);opacity:0.6}
+    .theme-btn:hover,.theme-btn.active{opacity:1;transform:scale(1.1)}
+    .theme-btn.light{background:#f0f0f0}.theme-btn.dark{background:#1a1a2e}.theme-btn.neon{background:#0a0a0f;border:1px solid #00ff88}.theme-btn.disco{background:linear-gradient(45deg,#ff006e,#8338ec)}
+    #header{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--bg-white);height:70px;box-shadow:var(--shadow-md)}
+    .header-inner{height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+    .nav-left,.nav-right{position:absolute;display:flex;align-items:center;gap:5px}
+    .nav-left{left:60px}.nav-right{right:60px}
+    .logo{display:flex;flex-direction:column;align-items:center;line-height:1.1}
+    .logo-main{font-size:24px;font-weight:700;color:var(--primary)}
+    .logo-sub{font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-light)}
+    .nav-link{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:0 15px;height:70px;display:flex;align-items:center;color:var(--text-dark)}
+    .nav-link:hover,.nav-link.active{color:var(--primary)}
+    .btn-adhesion{background:var(--primary);color:var(--text-white)!important;padding:12px 20px;font-size:11px;font-weight:700;text-transform:uppercase;margin-left:10px;border-radius:3px}
+    .btn-adhesion:hover{background:var(--primary-dark)}
+    .social-header{display:flex;gap:5px;margin-left:15px}
+    .social-header a{color:var(--text-dark);font-size:12px;padding:5px}
+    .social-header a:hover{color:var(--primary)}
+    .mobile-toggle{display:none;width:25px;height:18px;flex-direction:column;justify-content:space-between;cursor:pointer;position:absolute;right:20px}
+    .mobile-toggle span{height:2px;background:var(--text-dark)}
+    .page-header{background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);padding:150px 0 80px;text-align:center}
+    .page-header h1{font-size:42px;color:var(--text-white);margin-bottom:15px}
+    .page-header p{font-size:16px;color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto}
+    .section{padding:80px 0}
+    .section-gray{background:var(--bg-gray)}
+    .section-title{font-size:28px;text-align:center;margin-bottom:15px}
+    .section-subtitle{font-size:15px;text-align:center;color:var(--text-body);max-width:700px;margin:0 auto 50px}
+
+    /* Intro */
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .intro-content h2{font-size:32px;margin-bottom:20px}
+    .intro-content p{margin-bottom:15px;font-size:15px}
+    .intro-image img{border-radius:5px;box-shadow:var(--shadow-lg)}
+
+    /* Pillars */
+    .pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+    .pillar-card{background:var(--bg-white);padding:40px 30px;border-radius:5px;text-align:center;transition:var(--transition);border-bottom:4px solid transparent}
+    .pillar-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-bottom-color:var(--primary)}
+    .pillar-number{width:60px;height:60px;margin:0 auto 20px;background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:var(--text-white)}
+    .pillar-card h3{font-size:20px;margin-bottom:15px}
+    .pillar-card p{font-size:13px;color:var(--text-body)}
+
+    /* Methods */
+    .methods-list{max-width:900px;margin:0 auto}
+    .method-item{display:flex;gap:30px;padding:40px 0;border-bottom:1px solid var(--bg-gray)}
+    .method-item:last-child{border-bottom:none}
+    .method-icon{width:80px;height:80px;background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .method-icon i{font-size:32px;color:var(--text-white)}
+    .method-content h3{font-size:20px;margin-bottom:10px;color:var(--text-dark)}
+    .method-content p{font-size:14px;color:var(--text-body)}
+
+    /* What We Don't Do */
+    .contrast-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+    .contrast-card{padding:35px;border-radius:5px}
+    .contrast-card.do{background:linear-gradient(135deg,rgba(107,142,107,0.1) 0%,rgba(155,123,184,0.1) 100%);border-left:4px solid var(--primary)}
+    .contrast-card.dont{background:var(--bg-white);border-left:4px solid #dc3545}
+    .contrast-card h3{font-size:18px;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+    .contrast-card.do h3{color:var(--primary)}
+    .contrast-card.dont h3{color:#dc3545}
+    .contrast-card ul{list-style:none}
+    .contrast-card li{padding:8px 0;font-size:14px;display:flex;align-items:flex-start;gap:10px}
+    .contrast-card.do li::before{content:'✓';color:var(--primary);font-weight:700}
+    .contrast-card.dont li::before{content:'✗';color:#dc3545;font-weight:700}
+
+    /* CTA */
+    .cta{padding:80px 0;background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);text-align:center}
+    .cta h2{font-size:32px;color:var(--text-white);margin-bottom:15px}
+    .cta p{font-size:16px;color:rgba(255,255,255,0.9);margin-bottom:30px}
+    .cta-buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+    .btn-cta{display:inline-block;padding:16px 35px;font-size:12px;font-weight:700;text-transform:uppercase;border-radius:3px;transition:var(--transition)}
+    .btn-white{background:var(--text-white);color:var(--primary)}
+    .btn-ghost{background:transparent;color:var(--text-white);border:2px solid rgba(255,255,255,0.5)}
+    .btn-cta:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+    .btn-ghost:hover{background:var(--text-white);color:var(--primary)}
+
+    footer{background:var(--bg-dark);color:var(--text-white);padding:60px 0 30px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:40px}
+    .footer-brand .logo-footer{font-size:24px;font-weight:700;color:var(--primary-light);margin-bottom:5px}
+    .footer-brand .tagline-footer{font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:15px}
+    .footer-desc{color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:20px}
+    .footer-social{display:flex;gap:8px}
+    .footer-social a{width:36px;height:36px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:var(--text-white);font-size:13px;border-radius:50%}
+    .footer-social a:hover{background:var(--primary)}
+    .footer-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:10px}
+    .footer-links a{color:rgba(255,255,255,0.6);font-size:13px}
+    .footer-links a:hover{color:var(--primary-light);padding-left:5px}
+    .footer-bottom{padding-top:25px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.5);flex-wrap:wrap;gap:15px}
+    .footer-disclaimer{font-size:11px;color:rgba(255,255,255,0.4)}
+    .footer-legal{display:flex;gap:20px}
+    .footer-legal a:hover{color:var(--text-white)}
+
+    @media(max-width:1200px){.container{padding:0 30px}.nav-left{left:30px}.nav-right{right:30px}.pillars-grid{grid-template-columns:1fr}}
+    @media(max-width:1024px){.nav-left,.nav-right{display:none}.mobile-toggle{display:flex}.header-inner{justify-content:center}.intro-grid{grid-template-columns:1fr}.contrast-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.container{padding:0 20px}.page-header h1{font-size:32px}.intro-content h2{font-size:26px}.method-item{flex-direction:column;text-align:center}.method-icon{margin:0 auto}.cta-buttons{flex-direction:column}.footer-grid{grid-template-columns:1fr;text-align:center}.footer-social{justify-content:center}.footer-bottom{flex-direction:column;text-align:center}}
+    </style>
+</head>
+<body>
+
+    <div class="theme-switcher">
+        <button class="theme-btn light active" data-theme="light" title="Clair">☀️</button>
+        <button class="theme-btn dark" data-theme="dark" title="Sombre">🌙</button>
+        <button class="theme-btn neon" data-theme="neon" title="Néon">⚡</button>
+        <button class="theme-btn disco" data-theme="disco" title="Disco">🪩</button>
+    </div>
+
+    <header id="header">
+        <div class="header-inner container">
+            <nav class="nav-left">
+                <a href="mouvement.html" class="nav-link">Mouvement</a>
+                <a href="ressources.html" class="nav-link">Ressources</a>
+                <a href="agenda.html" class="nav-link">Agenda</a>
+            </nav>
+            <a href="index.html" class="logo">
+                <span class="logo-main">!MR++</span>
+                <span class="logo-sub">Le Mouvement Radical</span>
+            </a>
+            <nav class="nav-right">
+                <a href="equipe.html" class="nav-link">Équipe</a>
+                <a href="programme.html" class="nav-link active">Programme</a>
+                <a href="adhesion.html" class="btn-adhesion">Rejoindre</a>
+                <div class="social-header">
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </nav>
+            <div class="mobile-toggle"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Notre Approche</h1>
+            <p>Une pédagogie de l'émancipation : donner les outils pour comprendre, pas les conclusions à adopter.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-content">
+                    <h2>Ni cours magistral, ni tribune politique</h2>
+                    <p>Nous ne sommes pas une école, nous ne distribuons pas de diplômes. Nous ne sommes pas un parti, nous ne cherchons pas vos voix.</p>
+                    <p>Notre approche repose sur un constat simple : <strong>les citoyens sont capables de penser par eux-mêmes</strong>, à condition qu'on leur donne accès aux bonnes informations et aux bons outils d'analyse.</p>
+                    <p>Nous ne vous dirons jamais pour qui voter. Nous vous montrerons comment analyser un programme, repérer une manipulation rhétorique, vérifier une information. La conclusion, c'est vous qui la tirez.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" alt="Approche">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-gray">
+        <div class="container">
+            <h2 class="section-title">Nos trois piliers</h2>
+            <p class="section-subtitle">Chaque action que nous menons repose sur ces trois principes fondamentaux.</p>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-number">1</div>
+                    <h3>Décrypter</h3>
+                    <p>Analyser l'actualité politique, expliquer les mécanismes de pouvoir, décoder le langage des élus. Rendre visible ce qui est volontairement obscur.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-number">2</div>
+                    <h3>Outiller</h3>
+                    <p>Fournir des méthodes concrètes : fact-checking, analyse de programme, détection des sophismes, lecture critique des médias. Des compétences transférables.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-number">3</div>
+                    <h3>Accompagner</h3>
+                    <p>Aider ceux qui veulent s'engager : comment écrire à un élu, organiser une action, prendre la parole en public, créer un collectif.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Nos méthodes</h2>
+            <p class="section-subtitle">Comment nous mettons ces principes en pratique.</p>
+            <div class="methods-list">
+                <div class="method-item">
+                    <div class="method-icon"><i class="fas fa-users"></i></div>
+                    <div class="method-content">
+                        <h3>Ateliers participatifs</h3>
+                        <p>Pas de cours magistral : nos ateliers partent des questions des participants. On décortique ensemble l'actualité, on débat, on confronte les points de vue. L'animateur facilite, il ne prêche pas.</p>
+                    </div>
+                </div>
+                <div class="method-item">
+                    <div class="method-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="method-content">
+                        <h3>Fiches pratiques</h3>
+                        <p>Des guides téléchargeables, concrets et utilisables immédiatement : "Comment lire un budget communal", "Les 10 sophismes les plus courants en politique", "Décoder un sondage"...</p>
+                    </div>
+                </div>
+                <div class="method-item">
+                    <div class="method-icon"><i class="fas fa-video"></i></div>
+                    <div class="method-content">
+                        <h3>Vidéos & Podcasts</h3>
+                        <p>Des formats courts et accessibles pour expliquer des concepts complexes : institutions belges, processus législatif, financement des partis, lobbying...</p>
+                    </div>
+                </div>
+                <div class="method-item">
+                    <div class="method-icon"><i class="fas fa-comments"></i></div>
+                    <div class="method-content">
+                        <h3>Communauté d'entraide</h3>
+                        <p>Un Discord actif où les membres s'entraident, partagent leurs analyses, posent leurs questions. Parce que l'intelligence collective bat l'expert isolé.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-gray">
+        <div class="container">
+            <h2 class="section-title">Ce que nous faisons / Ce que nous ne faisons pas</h2>
+            <p class="section-subtitle">Pour être parfaitement clairs sur notre positionnement.</p>
+            <div class="contrast-grid">
+                <div class="contrast-card do">
+                    <h3><i class="fas fa-check-circle"></i> Ce que nous faisons</h3>
+                    <ul>
+                        <li>Expliquer comment fonctionne le système politique belge</li>
+                        <li>Donner des outils pour analyser un programme électoral</li>
+                        <li>Apprendre à vérifier une information</li>
+                        <li>Décrypter les techniques de communication politique</li>
+                        <li>Accompagner les citoyens qui veulent s'engager</li>
+                        <li>Critiquer les pratiques, pas les personnes</li>
+                    </ul>
+                </div>
+                <div class="contrast-card dont">
+                    <h3><i class="fas fa-times-circle"></i> Ce que nous ne faisons pas</h3>
+                    <ul>
+                        <li>Donner des consignes de vote</li>
+                        <li>Soutenir un parti ou un candidat</li>
+                        <li>Propager une idéologie particulière</li>
+                        <li>Attaquer personnellement des élus</li>
+                        <li>Prétendre détenir LA vérité</li>
+                        <li>Accepter des financements partisans</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Envie de voir concrètement ?</h2>
+            <p>Parcourez nos ressources gratuites ou inscrivez-vous à notre prochain atelier.</p>
+            <div class="cta-buttons">
+                <a href="ressources.html" class="btn-cta btn-white">Voir les ressources</a>
+                <a href="agenda.html" class="btn-cta btn-ghost">Agenda des ateliers</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-footer">!MR++</div>
+                    <div class="tagline-footer">MR EN MIEUX • Le Mouvement Radical</div>
+                    <p class="footer-desc">Éducation populaire et citoyenne. Comprendre pour agir, agir pour changer.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Mouvement</h4>
+                    <ul class="footer-links">
+                        <li><a href="mouvement.html">Notre histoire</a></li>
+                        <li><a href="equipe.html">L'équipe</a></li>
+                        <li><a href="programme.html">Notre approche</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Ressources</h4>
+                    <ul class="footer-links">
+                        <li><a href="ressources.html">Décryptages</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                        <li><a href="outils.html">Outils</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Nous écrire</a></li>
+                        <li><a href="adhesion.html">Rejoindre</a></li>
+                        <li><a href="presse.html">Presse</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-disclaimer">Site parodique à vocation éducative. Non affilié au MR officiel. #!BIM 💚💜</p>
+                <div class="footer-legal">
+                    <a href="mentions.html">Mentions légales</a>
+                    <a href="confidentialite.html">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const themeBtns=document.querySelectorAll('.theme-btn');const html=document.documentElement;themeBtns.forEach(btn=>{btn.addEventListener('click',()=>{const theme=btn.dataset.theme;html.setAttribute('data-theme',theme);themeBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');localStorage.setItem('mr-theme',theme)})});const savedTheme=localStorage.getItem('mr-theme');if(savedTheme){html.setAttribute('data-theme',savedTheme);themeBtns.forEach(btn=>{btn.classList.toggle('active',btn.dataset.theme===savedTheme)})}
+    </script>
+</body>
+</html>
