@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notre Équipe - MR</title>
+    <meta name="description" content="Découvrez l'équipe dirigeante du Mouvement Réformateur. Nos élus, ministres et responsables au service des citoyens.">
+    <link rel="shortcut icon" href="https://www.mr.be/wp-content/uploads/2023/09/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    :root{--blue:#002eff;--blue-dark:#0022cc;--white:#fff;--black:#000;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-400:#9ca3af;--gray-600:#4b5563;--gray-800:#1f2937}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:'Open Sans',system-ui,sans-serif;font-size:14px;line-height:1.8;color:var(--gray-600);background:var(--white)}
+    a{text-decoration:none;color:inherit;transition:all .3s}
+    img{max-width:100%;height:auto;display:block}
+    h1,h2,h3,h4{font-weight:700;color:var(--black);line-height:1.3}
+    @font-face{font-family:'Open Sans';src:url('https://www.mr.be/wp-content/themes/salient/css/fonts/OpenSans-Regular.woff') format('woff');font-weight:400}
+    @font-face{font-family:'Open Sans';src:url('https://www.mr.be/wp-content/themes/salient/css/fonts/OpenSans-SemiBold.woff') format('woff');font-weight:600}
+    @font-face{font-family:'Open Sans';src:url('https://www.mr.be/wp-content/themes/salient/css/fonts/OpenSans-Bold.woff') format('woff');font-weight:700}
+
+    /* HEADER */
+    #header{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--white);height:70px;box-shadow:0 0 30px rgba(0,0,0,.1)}
+    .header-inner{max-width:1400px;margin:0 auto;padding:0 60px;height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+    .nav-left,.nav-right{position:absolute;display:flex;align-items:center;gap:5px}
+    .nav-left{left:60px}
+    .nav-right{right:60px}
+    .logo{position:absolute;left:50%;transform:translateX(-50%)}
+    .logo img{height:45px}
+    .nav-link{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:0 15px;height:70px;display:flex;align-items:center;color:var(--black);transition:color .3s}
+    .nav-link:hover,.nav-link.active{color:var(--blue)}
+    .btn-adhesion{background:var(--blue);color:var(--white)!important;padding:12px 20px;font-size:11px;font-weight:700;text-transform:uppercase;margin-left:10px}
+    .btn-adhesion:hover{background:var(--blue-dark)}
+    .social-header{display:flex;gap:5px;margin-left:15px}
+    .social-header a{color:var(--black);font-size:12px;padding:5px}
+    .social-header a:hover{color:var(--blue)}
+    .mobile-toggle{display:none;width:25px;height:18px;flex-direction:column;justify-content:space-between;cursor:pointer;position:absolute;right:20px}
+    .mobile-toggle span{height:2px;background:var(--black)}
+
+    /* PAGE HEADER */
+    .page-header{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);padding:150px 0 80px;text-align:center}
+    .page-header h1{font-size:42px;color:var(--white);margin-bottom:15px}
+    .page-header p{font-size:16px;color:rgba(255,255,255,.8);max-width:600px;margin:0 auto}
+    .breadcrumb{margin-top:20px;font-size:13px;color:rgba(255,255,255,.6)}
+    .breadcrumb a{color:rgba(255,255,255,.8)}
+    .breadcrumb a:hover{color:var(--white)}
+
+    /* SECTIONS */
+    .section{padding:70px 0}
+    .section-gray{background:var(--gray-100)}
+    .container{max-width:1400px;margin:0 auto;padding:0 60px}
+    .section-title{font-size:28px;text-align:center;margin-bottom:50px}
+
+    /* PRESIDENT */
+    .president-section{padding:80px 0;background:var(--white)}
+    .president-card{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .president-image{position:relative}
+    .president-image img{width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 30px 60px rgba(0,0,0,.15)}
+    .president-image::before{content:'';position:absolute;top:-20px;left:-20px;right:20px;bottom:20px;border:3px solid var(--blue);z-index:-1}
+    .president-content h2{font-size:14px;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+    .president-content h3{font-size:36px;margin-bottom:20px}
+    .president-content p{font-size:15px;margin-bottom:20px}
+    .president-social{display:flex;gap:10px;margin-top:30px}
+    .president-social a{width:45px;height:45px;background:var(--blue);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .3s}
+    .president-social a:hover{background:var(--blue-dark);transform:translateY(-3px)}
+
+    /* TEAM GRID */
+    .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+    .team-card{background:var(--white);overflow:hidden;transition:all .4s;text-align:center}
+    .team-card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(0,0,0,.1)}
+    .team-image{position:relative;overflow:hidden;aspect-ratio:1}
+    .team-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .team-card:hover .team-image img{transform:scale(1.1)}
+    .team-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,46,255,.9) 0%,transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px}
+    .team-card:hover .team-overlay{opacity:1}
+    .team-overlay-social{display:flex;gap:10px}
+    .team-overlay-social a{width:36px;height:36px;background:var(--white);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .3s}
+    .team-overlay-social a:hover{background:var(--blue-dark);color:var(--white)}
+    .team-content{padding:20px}
+    .team-name{font-size:16px;margin-bottom:5px}
+    .team-role{font-size:12px;color:var(--blue);text-transform:uppercase;letter-spacing:1px}
+
+    /* CTA */
+    .cta{padding:80px 0;background:var(--blue);text-align:center}
+    .cta-inner{max-width:700px;margin:0 auto;padding:0 30px}
+    .cta h2{font-size:36px;color:var(--white);margin-bottom:15px}
+    .cta p{font-size:16px;color:rgba(255,255,255,.85);margin-bottom:30px}
+    .btn-cta{display:inline-block;padding:16px 35px;font-size:12px;font-weight:700;text-transform:uppercase;background:var(--white);color:var(--blue);transition:all .3s}
+    .btn-cta:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+
+    /* FOOTER */
+    .footer{background:var(--gray-800);color:var(--white);padding:50px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:40px}
+    .footer-brand img{height:45px;filter:brightness(0) invert(1);margin-bottom:15px}
+    .footer-desc{color:rgba(255,255,255,.6);font-size:13px;margin-bottom:20px}
+    .footer-social{display:flex;gap:8px}
+    .footer-social a{width:36px;height:36px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:13px;transition:background .3s}
+    .footer-social a:hover{background:var(--blue)}
+    .footer-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:10px}
+    .footer-links a{color:rgba(255,255,255,.6);font-size:13px;transition:all .3s}
+    .footer-links a:hover{color:var(--blue);padding-left:5px}
+    .footer-bottom{padding-top:25px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:15px}
+    .footer-legal{display:flex;gap:20px}
+    .footer-legal a:hover{color:var(--white)}
+
+    /* RESPONSIVE */
+    @media(max-width:1200px){
+        .header-inner,.container{padding-left:30px;padding-right:30px}
+        .nav-left{left:30px}.nav-right{right:30px}
+        .team-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:1024px){
+        .nav-left,.nav-right{display:none}
+        .mobile-toggle{display:flex}
+        .logo{position:relative;left:0;transform:none}
+        .header-inner{justify-content:space-between}
+        .president-card{grid-template-columns:1fr;gap:40px}
+        .president-image::before{display:none}
+        .team-grid{grid-template-columns:repeat(2,1fr)}
+        .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+    }
+    @media(max-width:768px){
+        .page-header h1{font-size:32px}
+        .president-content h3{font-size:28px}
+        .team-grid{grid-template-columns:1fr}
+        .team-card{max-width:350px;margin:0 auto}
+        .footer-grid{grid-template-columns:1fr;text-align:center}
+        .footer-social{justify-content:center}
+        .footer-bottom{flex-direction:column;text-align:center}
+    }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+    <div class="header-inner">
+        <nav class="nav-left">
+            <a href="mouvement.html" class="nav-link">Mouvement</a>
+            <a href="actualites.html" class="nav-link">Actu</a>
+            <a href="agenda.html" class="nav-link">Agenda</a>
+        </nav>
+        <a href="index.html" class="logo">
+            <img src="https://www.mr.be/wp-content/uploads/2023/09/Logonew-retina.png" alt="MR">
+        </a>
+        <nav class="nav-right">
+            <a href="equipe.html" class="nav-link active">Équipe</a>
+            <a href="programme.html" class="nav-link">Programme</a>
+            <a href="adhesion.html" class="btn-adhesion">Adhésion</a>
+            <div class="social-header">
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+        <div class="mobile-toggle"><span></span><span></span><span></span></div>
+    </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <div class="container">
+        <h1>Notre Équipe</h1>
+        <p>Des femmes et des hommes engagés au service des citoyens et de la Belgique.</p>
+        <div class="breadcrumb">
+            <a href="index.html">Accueil</a> / <span>Équipe</span>
+        </div>
+    </div>
+</section>
+
+<!-- PRESIDENT -->
+<section class="president-section">
+    <div class="container">
+        <div class="president-card">
+            <div class="president-image">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800" alt="Le Président">
+            </div>
+            <div class="president-content">
+                <h2>Président</h2>
+                <h3>Georges-Louis Bouchez</h3>
+                <p>Depuis son élection à la présidence du Mouvement Réformateur, Georges-Louis Bouchez incarne une nouvelle génération de responsables politiques, engagés et déterminés.</p>
+                <p>Son leadership dynamique et sa vision claire pour la Belgique ont permis au parti de se renouveler et de se renforcer, attirant de nombreux nouveaux militants convaincus par ses idées libérales modernes.</p>
+                <p>Sa priorité : remettre le travail au cœur de notre société et défendre les valeurs de liberté et de responsabilité.</p>
+                <div class="president-social">
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EQUIPE DIRIGEANTE -->
+<section class="section section-gray">
+    <div class="container">
+        <h2 class="section-title">L'équipe dirigeante</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="team-overlay-social">
+                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <h3 class="team-name">Sophie Wilmès</h3>
+                    <p class="team-role">Vice-Présidente</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="team-overlay-social">
+                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <h3 class="team-name">David Clarinval</h3>
+                    <p class="team-role">Vice-Président</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="team-overlay-social">
+                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <h3 class="team-name">Marie-Christine Marghem</h3>
+                    <p class="team-role">Secrétaire Générale</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="team-overlay-social">
+                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <h3 class="team-name">Philippe Goffin</h3>
+                    <p class="team-role">Trésorier</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MINISTRES -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Nos Ministres</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="team-overlay-social">
+                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <h3 class="team-name">Pierre Lambert</h3>
+                    <p class="team-role">Ministre de l'Économie</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="team-overlay-social">
+                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <h3 class="team-name">Anne Dubois</h3>
+                    <p class="team-role">Ministre de l'Éducation</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="team-overlay-social">
+                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <h3 class="team-name">Marc Janssen</h3>
+                    <p class="team-role">Ministre des Finances</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="">
+                    <div class="team-overlay">
+                        <div class="team-overlay-social">
+                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <h3 class="team-name">Caroline Maes</h3>
+                    <p class="team-role">Ministre de la Santé</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="cta-inner">
+        <h2>Rejoignez notre équipe</h2>
+        <p>Vous partagez nos valeurs ? Engagez-vous à nos côtés pour construire la Belgique de demain.</p>
+        <a href="adhesion.html" class="btn-cta">Adhérer maintenant</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://www.mr.be/wp-content/uploads/2023/09/Logonew-retina.png" alt="MR">
+                <p class="footer-desc">Le Mouvement Réformateur rassemble tous ceux qui veulent une Belgique plus libre et plus solidaire.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title">Mouvement</h4>
+                <ul class="footer-links">
+                    <li><a href="mouvement.html">Notre histoire</a></li>
+                    <li><a href="equipe.html">L'équipe</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Actualités</h4>
+                <ul class="footer-links">
+                    <li><a href="actualites.html">Articles</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="#">Médias</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Nous contacter</a></li>
+                    <li><a href="adhesion.html">Adhésion</a></li>
+                    <li><a href="#">Presse</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 MR - Mouvement Réformateur. Tous droits réservés.</p>
+            <div class="footer-legal">
+                <a href="#">Mentions légales</a>
+                <a href="#">Confidentialité</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

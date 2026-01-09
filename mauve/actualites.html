@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Actualités - MR</title>
+    <meta name="description" content="Toutes les actualités du Mouvement Réformateur : communiqués, analyses, positions et réactions.">
+    <link rel="shortcut icon" href="https://www.mr.be/wp-content/uploads/2023/09/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    :root{--blue:#002eff;--blue-dark:#0022cc;--white:#fff;--black:#000;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-400:#9ca3af;--gray-600:#4b5563;--gray-800:#1f2937}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Open Sans',system-ui,sans-serif;font-size:14px;line-height:1.8;color:var(--gray-600);background:var(--gray-100)}
+    a{text-decoration:none;color:inherit;transition:all .3s}
+    img{max-width:100%;height:auto;display:block}
+    h1,h2,h3,h4{font-weight:700;color:var(--black);line-height:1.3}
+    @font-face{font-family:'Open Sans';src:url('https://www.mr.be/wp-content/themes/salient/css/fonts/OpenSans-Regular.woff') format('woff');font-weight:400}
+    @font-face{font-family:'Open Sans';src:url('https://www.mr.be/wp-content/themes/salient/css/fonts/OpenSans-SemiBold.woff') format('woff');font-weight:600}
+    @font-face{font-family:'Open Sans';src:url('https://www.mr.be/wp-content/themes/salient/css/fonts/OpenSans-Bold.woff') format('woff');font-weight:700}
+    #header{position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--white);height:70px;box-shadow:0 0 30px rgba(0,0,0,.1)}
+    .header-inner{max-width:1400px;margin:0 auto;padding:0 60px;height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+    .nav-left,.nav-right{position:absolute;display:flex;align-items:center;gap:5px}
+    .nav-left{left:60px}.nav-right{right:60px}
+    .logo{position:absolute;left:50%;transform:translateX(-50%)}
+    .logo img{height:45px}
+    .nav-link{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:0 15px;height:70px;display:flex;align-items:center;color:var(--black)}
+    .nav-link:hover,.nav-link.active{color:var(--blue)}
+    .btn-adhesion{background:var(--blue);color:var(--white)!important;padding:12px 20px;font-size:11px;font-weight:700;text-transform:uppercase;margin-left:10px}
+    .btn-adhesion:hover{background:var(--blue-dark)}
+    .social-header{display:flex;gap:5px;margin-left:15px}
+    .social-header a{color:var(--black);font-size:12px;padding:5px}
+    .social-header a:hover{color:var(--blue)}
+    .mobile-toggle{display:none;width:25px;height:18px;flex-direction:column;justify-content:space-between;cursor:pointer;position:absolute;right:20px}
+    .mobile-toggle span{height:2px;background:var(--black)}
+    .page-header{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);padding:150px 0 80px;text-align:center}
+    .page-header h1{font-size:42px;color:var(--white);margin-bottom:15px}
+    .page-header p{font-size:16px;color:rgba(255,255,255,.8);max-width:600px;margin:0 auto}
+    .section{padding:70px 0}
+    .container{max-width:1400px;margin:0 auto;padding:0 60px}
+    .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+    .article-card{background:var(--white);overflow:hidden;transition:all .4s}
+    .article-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,.1)}
+    .article-image{position:relative;overflow:hidden;aspect-ratio:16/10}
+    .article-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .article-card:hover .article-image img{transform:scale(1.05)}
+    .article-tag{position:absolute;top:12px;left:12px;background:var(--blue);color:var(--white);padding:4px 12px;font-size:9px;font-weight:700;text-transform:uppercase}
+    .article-content{padding:25px}
+    .article-title{font-size:18px;color:var(--black);line-height:1.4;margin-bottom:10px}
+    .article-card:hover .article-title{color:var(--blue)}
+    .article-excerpt{font-size:13px;color:var(--gray-600);margin-bottom:15px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .article-meta{display:flex;align-items:center;gap:10px}
+    .article-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden}
+    .article-avatar img{width:100%;height:100%;object-fit:cover}
+    .article-author{font-size:12px;font-weight:600;color:var(--black)}
+    .article-date{font-size:11px;color:var(--gray-400)}
+    .footer{background:var(--gray-800);color:var(--white);padding:50px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:40px}
+    .footer-brand img{height:45px;filter:brightness(0) invert(1);margin-bottom:15px}
+    .footer-desc{color:rgba(255,255,255,.6);font-size:13px;margin-bottom:20px}
+    .footer-social{display:flex;gap:8px}
+    .footer-social a{width:36px;height:36px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:13px}
+    .footer-social a:hover{background:var(--blue)}
+    .footer-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:10px}
+    .footer-links a{color:rgba(255,255,255,.6);font-size:13px}
+    .footer-links a:hover{color:var(--blue);padding-left:5px}
+    .footer-bottom{padding-top:25px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:15px}
+    .footer-legal{display:flex;gap:20px}
+    @media(max-width:1200px){.header-inner,.container{padding-left:30px;padding-right:30px}.nav-left{left:30px}.nav-right{right:30px}.articles-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:1024px){.nav-left,.nav-right{display:none}.mobile-toggle{display:flex}.logo{position:relative;left:0;transform:none}.header-inner{justify-content:space-between}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.page-header h1{font-size:32px}.articles-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;text-align:center}.footer-social{justify-content:center}.footer-bottom{flex-direction:column;text-align:center}}
+    </style>
+</head>
+<body>
+<header id="header">
+    <div class="header-inner">
+        <nav class="nav-left">
+            <a href="mouvement.html" class="nav-link">Mouvement</a>
+            <a href="actualites.html" class="nav-link active">Actu</a>
+            <a href="agenda.html" class="nav-link">Agenda</a>
+        </nav>
+        <a href="index.html" class="logo"><img src="https://www.mr.be/wp-content/uploads/2023/09/Logonew-retina.png" alt="MR"></a>
+        <nav class="nav-right">
+            <a href="equipe.html" class="nav-link">Équipe</a>
+            <a href="programme.html" class="nav-link">Programme</a>
+            <a href="adhesion.html" class="btn-adhesion">Adhésion</a>
+            <div class="social-header">
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+        <div class="mobile-toggle"><span></span><span></span><span></span></div>
+    </div>
+</header>
+<section class="page-header">
+    <div class="container">
+        <h1>Actualités</h1>
+        <p>Restez informé de toutes nos actions, prises de position et événements.</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="articles-grid">
+            <article class="article-card">
+                <a href="#"><div class="article-image"><img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600" alt=""><span class="article-tag">A la Une</span></div></a>
+                <div class="article-content">
+                    <h3 class="article-title"><a href="#">Le mouvement présente sa vision pour une Belgique plus forte</a></h3>
+                    <p class="article-excerpt">Notre mouvement a dévoilé un programme ambitieux axé sur la liberté économique...</p>
+                    <div class="article-meta"><div class="article-avatar"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt=""></div><div><div class="article-author">Pierre Lambert</div><div class="article-date">08/01/2026</div></div></div>
+                </div>
+            </article>
+            <article class="article-card">
+                <a href="#"><div class="article-image"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600" alt=""><span class="article-tag">Digital</span></div></a>
+                <div class="article-content">
+                    <h3 class="article-title"><a href="#">70 propositions pour une Belgique leader en IA</a></h3>
+                    <p class="article-excerpt">Un plan ambitieux pour faire de la Belgique un acteur majeur de l'intelligence artificielle...</p>
+                    <div class="article-meta"><div class="article-avatar"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt=""></div><div><div class="article-author">Anne Dubois</div><div class="article-date">07/01/2026</div></div></div>
+                </div>
+            </article>
+            <article class="article-card">
+                <a href="#"><div class="article-image"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600" alt=""><span class="article-tag">Économie</span></div></a>
+                <div class="article-content">
+                    <h3 class="article-title"><a href="#">Réforme fiscale : les 10 mesures phares</a></h3>
+                    <p class="article-excerpt">Notre plan pour simplifier la fiscalité et redonner du pouvoir d'achat...</p>
+                    <div class="article-meta"><div class="article-avatar"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt=""></div><div><div class="article-author">Marc Janssen</div><div class="article-date">06/01/2026</div></div></div>
+                </div>
+            </article>
+            <article class="article-card">
+                <a href="#"><div class="article-image"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600" alt=""><span class="article-tag">Emploi</span></div></a>
+                <div class="article-content">
+                    <h3 class="article-title"><a href="#">Création de 50 000 emplois grâce à notre plan</a></h3>
+                    <p class="article-excerpt">Notre politique économique va permettre de créer des dizaines de milliers d'emplois...</p>
+                    <div class="article-meta"><div class="article-avatar"><img src="https://randomuser.me/api/portraits/women/55.jpg" alt=""></div><div><div class="article-author">Caroline Maes</div><div class="article-date">05/01/2026</div></div></div>
+                </div>
+            </article>
+            <article class="article-card">
+                <a href="#"><div class="article-image"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600" alt=""><span class="article-tag">Éducation</span></div></a>
+                <div class="article-content">
+                    <h3 class="article-title"><a href="#">Notre vision pour l'école de demain</a></h3>
+                    <p class="article-excerpt">Investir dans l'éducation pour garantir l'excellence et l'égalité des chances...</p>
+                    <div class="article-meta"><div class="article-avatar"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt=""></div><div><div class="article-author">François Petit</div><div class="article-date">04/01/2026</div></div></div>
+                </div>
+            </article>
+            <article class="article-card">
+                <a href="#"><div class="article-image"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600" alt=""><span class="article-tag">Événement</span></div></a>
+                <div class="article-content">
+                    <h3 class="article-title"><a href="#">Grand meeting : 5000 citoyens mobilisés</a></h3>
+                    <p class="article-excerpt">Un succès historique pour notre grand rassemblement national à Namur...</p>
+                    <div class="article-meta"><div class="article-avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""></div><div><div class="article-author">Marie Dupont</div><div class="article-date">03/01/2026</div></div></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand"><img src="https://www.mr.be/wp-content/uploads/2023/09/Logonew-retina.png" alt="MR"><p class="footer-desc">Le Mouvement Réformateur rassemble tous ceux qui veulent une Belgique plus libre.</p><div class="footer-social"><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+            <div><h4 class="footer-title">Mouvement</h4><ul class="footer-links"><li><a href="mouvement.html">Notre histoire</a></li><li><a href="equipe.html">L'équipe</a></li><li><a href="programme.html">Programme</a></li></ul></div>
+            <div><h4 class="footer-title">Actualités</h4><ul class="footer-links"><li><a href="actualites.html">Articles</a></li><li><a href="agenda.html">Agenda</a></li></ul></div>
+            <div><h4 class="footer-title">Contact</h4><ul class="footer-links"><li><a href="contact.html">Nous contacter</a></li><li><a href="adhesion.html">Adhésion</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 MR - Mouvement Réformateur.</p><div class="footer-legal"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div></div>
+    </div>
+</footer>
+</body>
+</html>
