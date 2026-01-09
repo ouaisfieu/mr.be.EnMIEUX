@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Accueil - MR</title>
+    <link rel="shortcut icon" href="https://www.mr.be/wp-content/uploads/2023/09/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    /* ============================================
+       FONTS - Open Sans comme MR.be
+       ============================================ */
+    @font-face {
+        font-family: 'Open Sans';
+        src: url('https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVQUwaEQbjA.woff2') format('woff2');
+        font-weight: 300;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Open Sans';
+        src: url('https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVQUwaEQbjA.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Open Sans';
+        src: url('https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVQUwaEQbjA.woff2') format('woff2');
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Open Sans';
+        src: url('https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVQUwaEQbjA.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    /* ============================================
+       RESET & BASE - Style MR.be exact
+       ============================================ */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        line-height: 1.8;
+        color: #666;
+        background: #fff;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+        color: #000;
+        line-height: 1.3;
+    }
+
+    /* ============================================
+       HEADER - Format centré comme MR.be
+       ============================================ */
+    #header-outer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.33, 1);
+        height: 90px;
+    }
+
+    #header-outer.transparent {
+        background: transparent;
+    }
+
+    #header-outer.scrolled {
+        background: #fff;
+        height: 70px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    }
+
+    .header-container {
+        max-width: 1425px;
+        margin: 0 auto;
+        padding: 0 90px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    /* Navigation gauche */
+    .nav-left {
+        position: absolute;
+        left: 90px;
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
+    .nav-left .nav-link {
+        padding: 0 17px;
+    }
+
+    /* Logo centré */
+    .logo-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo-center img {
+        height: 70px;
+        width: auto;
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.33, 1);
+    }
+
+    #header-outer.scrolled .logo-center img {
+        height: 50px;
+    }
+
+    /* Navigation droite */
+    .nav-right {
+        position: absolute;
+        right: 90px;
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
+    .nav-link {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #fff;
+        padding: 0 17px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    #header-outer.scrolled .nav-link {
+        color: #000;
+        height: 70px;
+    }
+
+    .nav-link:hover {
+        color: #002eff;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 25px;
+        left: 17px;
+        right: 17px;
+        height: 2px;
+        background: #002eff;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+
+    .nav-link:hover::after {
+        transform: scaleX(1);
+    }
+
+    /* Bouton Adhésion bleu */
+    .btn-adhesion {
+        background: #002eff !important;
+        color: #fff !important;
+        padding: 13px 22px !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        border-radius: 0 !important;
+        margin-left: 15px;
+        height: auto !important;
+    }
+
+    .btn-adhesion:hover {
+        background: #0022cc !important;
+    }
+
+    /* Bouton Membre bordé */
+    .btn-membre {
+        border: 1px solid rgba(255,255,255,0.4);
+        color: #fff;
+        padding: 10px 18px;
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 10px;
+    }
+
+    #header-outer.scrolled .btn-membre {
+        border-color: rgba(0,0,0,0.2);
+        color: #000;
+    }
+
+    .btn-membre:hover {
+        border-color: #002eff;
+        color: #002eff;
+    }
+
+    /* Icônes sociales header */
+    .social-header {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+        gap: 0;
+    }
+
+    .social-header a {
+        color: #fff;
+        font-size: 13px;
+        padding: 0 8px;
+        transition: color 0.3s;
+    }
+
+    #header-outer.scrolled .social-header a {
+        color: #000;
+    }
+
+    .social-header a:hover {
+        color: #002eff;
+    }
+
+    /* Mobile toggle */
+    .mobile-toggle {
+        display: none;
+        width: 28px;
+        height: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        position: absolute;
+        right: 30px;
+    }
+
+    .mobile-toggle span {
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s;
+    }
+
+    #header-outer.scrolled .mobile-toggle span {
+        background: #000;
+    }
+
+    /* ============================================
+       HERO SLIDER - Style MR.be exact
+       ============================================ */
+    .hero-slider {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    .slide.active {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .slide-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transition: transform 8s ease-out;
+        transform: scale(1.1);
+    }
+
+    .slide.active .slide-bg {
+        transform: scale(1);
+    }
+
+    .slide::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+        z-index: 1;
+    }
+
+    .slide-content {
+        position: relative;
+        z-index: 10;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        max-width: 1425px;
+        margin: 0 auto;
+        padding: 0 90px;
+    }
+
+    .slide-inner {
+        max-width: 750px;
+    }
+
+    /* Meta auteur */
+    .slide-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .slide-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+    }
+
+    .slide-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slide-author {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .slide-author a {
+        color: #fff;
+    }
+
+    .slide-author a:hover {
+        text-decoration: underline;
+    }
+
+    .slide-category {
+        display: inline-block;
+        background: #002eff;
+        color: #fff;
+        padding: 4px 12px;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-left: 8px;
+    }
+
+    /* Titre slide - style exact MR */
+    .slide-title {
+        font-size: 52px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.15;
+        margin-bottom: 30px;
+        text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Boutons slide */
+    .slide-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .btn-slide {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 28px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s;
+    }
+
+    .btn-slide-primary {
+        background: #002eff;
+        color: #fff;
+    }
+
+    .btn-slide-primary:hover {
+        background: #0022cc;
+        transform: translateX(5px);
+    }
+
+    .btn-slide-primary i {
+        transition: transform 0.3s;
+    }
+
+    .btn-slide-primary:hover i {
+        transform: translateX(5px);
+    }
+
+    .btn-slide-outline {
+        background: transparent;
+        color: #fff;
+        border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-slide-outline:hover {
+        background: #fff;
+        color: #000;
+        border-color: #fff;
+    }
+
+    /* Navigation slider en bas */
+    .slider-controls {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(0,0,0,0.4);
+    }
+
+    .slider-controls-inner {
+        max-width: 1425px;
+        margin: 0 auto;
+        padding: 0 90px;
+        display: flex;
+    }
+
+    .control-item {
+        flex: 1;
+        padding: 25px 30px;
+        color: rgba(255,255,255,0.6);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        border-left: 1px solid rgba(255,255,255,0.1);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .control-item:first-child {
+        border-left: none;
+    }
+
+    .control-item::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #002eff;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+
+    .control-item:hover,
+    .control-item.active {
+        color: #fff;
+        background: rgba(0,0,0,0.3);
+    }
+
+    .control-item.active::before {
+        transform: scaleX(1);
+    }
+
+    /* ============================================
+       SECTION BLEUE - 3 colonnes icônes
+       ============================================ */
+    .section-blue {
+        background: #002eff;
+        padding: 60px 0;
+    }
+
+    .section-blue-inner {
+        max-width: 1425px;
+        margin: 0 auto;
+        padding: 0 90px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+    }
+
+    .blue-card {
+        text-align: center;
+        padding: 20px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .blue-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .blue-icon {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto 25px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .blue-icon svg {
+        width: 40px;
+        height: 40px;
+        fill: #fff;
+    }
+
+    .blue-card h3 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .blue-card p {
+        color: rgba(255,255,255,0.85);
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* ============================================
+       SECTION ACTUALITÉS - Masonry
+       ============================================ */
+    .section-actu {
+        padding: 80px 0;
+        background: #fff;
+    }
+
+    .section-header {
+        max-width: 1425px;
+        margin: 0 auto 40px;
+        padding: 0 90px;
+    }
+
+    .section-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #000;
+    }
+
+    /* Grid masonry */
+    .masonry-container {
+        max-width: 1425px;
+        margin: 0 auto;
+        padding: 0 90px;
+    }
+
+    .masonry-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 25px;
+    }
+
+    /* Article principal (grand) */
+    .article-card {
+        background: #fff;
+        border-radius: 0;
+        overflow: hidden;
+        transition: all 0.4s;
+    }
+
+    .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .article-card.featured {
+        grid-row: span 2;
+    }
+
+    .article-image {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16/10;
+    }
+
+    .article-card.featured .article-image {
+        aspect-ratio: 16/14;
+    }
+
+    .article-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .article-card:hover .article-image img {
+        transform: scale(1.05);
+    }
+
+    .article-categories {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .cat-tag {
+        padding: 5px 14px;
+        font-size: 9px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .cat-tag.blue {
+        background: #002eff;
+        color: #fff;
+    }
+
+    .cat-tag.white {
+        background: #fff;
+        color: #666;
+    }
+
+    .article-content {
+        padding: 25px;
+    }
+
+    .article-card.featured .article-content {
+        padding: 30px;
+    }
+
+    .article-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #000;
+        line-height: 1.4;
+        margin-bottom: 12px;
+        transition: color 0.3s;
+    }
+
+    .article-card.featured .article-title {
+        font-size: 24px;
+    }
+
+    .article-card:hover .article-title {
+        color: #002eff;
+    }
+
+    .article-excerpt {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .article-avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .article-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .article-author-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .article-date {
+        font-size: 12px;
+        color: #999;
+    }
+
+    /* ============================================
+       SECTION AGENDA - Carousel
+       ============================================ */
+    .section-agenda {
+        padding: 80px 0;
+        background: #f9f9f9;
+    }
+
+    .agenda-grid {
+        max-width: 1425px;
+        margin: 0 auto;
+        padding: 0 90px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .event-card {
+        background: #fff;
+        overflow: hidden;
+        transition: all 0.4s;
+    }
+
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .event-image {
+        position: relative;
+        aspect-ratio: 16/11;
+        overflow: hidden;
+    }
+
+    .event-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .event-card:hover .event-image img {
+        transform: scale(1.05);
+    }
+
+    .event-date-badge {
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        background: #002eff;
+        color: #fff;
+        padding: 12px 18px;
+        text-align: center;
+    }
+
+    .event-day {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .event-month {
+        font-size: 12px;
+        text-transform: lowercase;
+    }
+
+    .event-year {
+        font-size: 11px;
+        opacity: 0.8;
+    }
+
+    .event-content {
+        padding: 25px;
+    }
+
+    .event-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+        line-height: 1.4;
+        margin-bottom: 12px;
+        transition: color 0.3s;
+    }
+
+    .event-card:hover .event-title {
+        color: #002eff;
+    }
+
+    .event-location {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .event-location strong {
+        color: #000;
+        display: block;
+    }
+
+    /* ============================================
+       SECTION CTA
+       ============================================ */
+    .section-cta {
+        padding: 100px 0;
+        background: #002eff;
+        text-align: center;
+    }
+
+    .cta-inner {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    .cta-title {
+        font-size: 42px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .cta-text {
+        font-size: 18px;
+        color: rgba(255,255,255,0.85);
+        margin-bottom: 35px;
+        line-height: 1.8;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-cta {
+        padding: 18px 40px;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s;
+    }
+
+    .btn-cta-white {
+        background: #fff;
+        color: #002eff;
+    }
+
+    .btn-cta-white:hover {
+        background: #f0f0f0;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .btn-cta-outline {
+        background: transparent;
+        color: #fff;
+        border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-cta-outline:hover {
+        background: #fff;
+        color: #002eff;
+        border-color: #fff;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 60px 0 30px;
+    }
+
+    .footer-inner {
+        max-width: 1425px;
+        margin: 0 auto;
+        padding: 0 90px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 50px;
+    }
+
+    .footer-brand img {
+        height: 50px;
+        margin-bottom: 20px;
+        filter: brightness(0) invert(1);
+    }
+
+    .footer-desc {
+        color: rgba(255,255,255,0.6);
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 14px;
+        transition: all 0.3s;
+    }
+
+    .footer-social a:hover {
+        background: #002eff;
+    }
+
+    .footer-title {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+        color: #fff;
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: rgba(255,255,255,0.6);
+        font-size: 14px;
+        transition: all 0.3s;
+    }
+
+    .footer-links a:hover {
+        color: #002eff;
+        padding-left: 5px;
+    }
+
+    .footer-bottom {
+        padding-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: rgba(255,255,255,0.5);
+    }
+
+    .footer-legal {
+        display: flex;
+        gap: 25px;
+    }
+
+    .footer-legal a:hover {
+        color: #fff;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1200px) {
+        .header-container,
+        .slide-content,
+        .slider-controls-inner,
+        .section-blue-inner,
+        .section-header,
+        .masonry-container,
+        .agenda-grid,
+        .footer-inner {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .nav-left {
+            left: 40px;
+        }
+
+        .nav-right {
+            right: 40px;
+        }
+
+        .slide-title {
+            font-size: 42px;
+        }
+
+        .masonry-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .article-card.featured {
+            grid-row: span 1;
+            grid-column: span 2;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .nav-left,
+        .nav-right,
+        .slider-controls {
+            display: none;
+        }
+
+        .mobile-toggle {
+            display: flex;
+        }
+
+        .logo-center {
+            position: relative;
+            left: 0;
+            transform: none;
+        }
+
+        .header-container {
+            justify-content: space-between;
+        }
+
+        .section-blue-inner,
+        .agenda-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .blue-card {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .slide-title {
+            font-size: 32px;
+        }
+
+        .slide-buttons {
+            flex-direction: column;
+        }
+
+        .btn-slide {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .masonry-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .article-card.featured {
+            grid-column: span 1;
+        }
+
+        .cta-title {
+            font-size: 28px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .footer-social {
+            justify-content: center;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .footer-legal {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <div id="header-outer" class="transparent">
+        <div class="header-container">
+            <!-- Nav gauche -->
+            <nav class="nav-left">
+                <a href="#" class="nav-link">Mouvement</a>
+                <a href="#" class="nav-link">Actu</a>
+                <a href="#" class="nav-link">Agenda</a>
+            </nav>
+
+            <!-- Logo centré -->
+            <a href="#" class="logo-center">
+                <img src="https://www.mr.be/wp-content/uploads/2023/09/Logonew-retina.png" alt="MR">
+            </a>
+
+            <!-- Nav droite -->
+            <nav class="nav-right">
+                <a href="#" class="nav-link">Nos actions</a>
+                <a href="#" class="nav-link">Vos questions</a>
+                <a href="#" class="nav-link">Shop</a>
+                <a href="#" class="btn-adhesion">Adhésion</a>
+                <a href="#" class="btn-membre"><i class="far fa-address-card"></i> Membre</a>
+                <div class="social-header">
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </nav>
+
+            <!-- Mobile toggle -->
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HERO SLIDER
+         ============================================ -->
+    <section class="hero-slider">
+        <!-- Slide 1 -->
+        <div class="slide active" data-index="0">
+            <div class="slide-bg" style="background-image: url('https://www.mr.be/wp-content/uploads/2026/01/55029720234_833f9a9985_k.jpg');"></div>
+            <div class="slide-content">
+                <div class="slide-inner">
+                    <div class="slide-meta">
+                        <div class="slide-avatar">
+                            <img src="https://secure.gravatar.com/avatar/cf854708571bb72cf51c6d53adb8f7c7846588bf6e6e14d5b8f1d44aa721e049?s=140&d=mm&r=g" alt="">
+                        </div>
+                        <div class="slide-author">
+                            Par <a href="#">Martine Dupont</a>
+                            <span class="slide-category">A la Une</span>
+                        </div>
+                    </div>
+                    <h1 class="slide-title">Vœux du MR à Liège : « Les vrais libéraux sont ici ce soir »</h1>
+                    <div class="slide-buttons">
+                        <a href="#" class="btn-slide btn-slide-primary">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-slide btn-slide-outline">Adhérer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" data-index="1">
+            <div class="slide-bg" style="background-image: url('https://www.mr.be/wp-content/uploads/2026/01/Bouchez-liege.jpg');"></div>
+            <div class="slide-content">
+                <div class="slide-inner">
+                    <div class="slide-meta">
+                        <div class="slide-avatar">
+                            <img src="https://secure.gravatar.com/avatar/3fa55727cd94322ed9053f68942a6720ed728cb6920ddb0285fe07eced0db965?s=140&d=mm&r=g" alt="">
+                        </div>
+                        <div class="slide-author">
+                            Par <a href="#">Rédaction</a>
+                            <span class="slide-category">A la Une</span>
+                        </div>
+                    </div>
+                    <h1 class="slide-title">Discours de Georges-Louis Bouchez : "Le confort des mots creux... ce n'est pas être fier d'être libéral !"</h1>
+                    <div class="slide-buttons">
+                        <a href="#" class="btn-slide btn-slide-primary">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-slide btn-slide-outline">Adhérer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" data-index="2">
+            <div class="slide-bg" style="background-image: url('https://www.mr.be/wp-content/uploads/2026/01/55025097184_44e8b2990a_o.jpeg');"></div>
+            <div class="slide-content">
+                <div class="slide-inner">
+                    <div class="slide-meta">
+                        <div class="slide-avatar">
+                            <img src="https://secure.gravatar.com/avatar/3fa55727cd94322ed9053f68942a6720ed728cb6920ddb0285fe07eced0db965?s=140&d=mm&r=g" alt="">
+                        </div>
+                        <div class="slide-author">
+                            Par <a href="#">Rédaction</a>
+                            <span class="slide-category">A la Une</span>
+                        </div>
+                    </div>
+                    <h1 class="slide-title">Le MR trace la voie avec 70 propositions concrètes pour une Belgique leader en intelligence artificielle</h1>
+                    <div class="slide-buttons">
+                        <a href="#" class="btn-slide btn-slide-primary">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-slide btn-slide-outline">Adhérer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation slider -->
+        <div class="slider-controls">
+            <div class="slider-controls-inner">
+                <div class="control-item active" data-slide="0">Vœux du MR à Liège : « Les vrais libéraux sont ici ce soir »</div>
+                <div class="control-item" data-slide="1">Discours de Georges-Louis Bouchez aux vœux du MR à Liège</div>
+                <div class="control-item" data-slide="2">Le MR trace la voie avec 70 propositions pour l'IA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION BLEUE - 3 colonnes
+         ============================================ -->
+    <section class="section-blue">
+        <div class="section-blue-inner">
+            <a href="#" class="blue-card">
+                <div class="blue-icon">
+                    <svg viewBox="0 0 32 32"><path d="M2.753 29.589c-0.068 0-0.139-0.011-0.205-0.031-0.351-0.113-0.541-0.489-0.428-0.84 0.54-1.667 1.177-3.281 1.904-4.836-1.823-3.4-1.661-6.964 0.476-10.328 4.447-6.999 16.593-11.703 24.052-11.091 0.316 0.028 0.571 0.272 0.608 0.587 0.037 0.313-0.153 0.612-0.455 0.711-10.029 3.271-18.067 10.143-22.783 19.279 8.489-1.305 12.336-6.277 16.061-11.089 2.113-2.733 4.109-5.311 6.876-7.267 0.301-0.212 0.717-0.14 0.928 0.16 0.213 0.3 0.141 0.717-0.159 0.929-2.604 1.841-4.541 4.344-6.591 6.993-4.020 5.195-8.173 10.564-17.824 11.719-0.695 1.495-1.305 3.044-1.827 4.645-0.091 0.283-0.353 0.459-0.635 0.459z"/></svg>
+                </div>
+                <h3>Notre histoire</h3>
+                <p>L'histoire de notre parti se confond avec l'histoire de notre pays. Notre mouvement existe depuis 175 ans ! C'est le plus ancien parti de Belgique.</p>
+            </a>
+
+            <a href="#" class="blue-card">
+                <div class="blue-icon">
+                    <svg viewBox="0 0 32 32"><path d="M30.708 12c-0.008 0-0.019 0-0.027 0h-29.389c-0.289 0-0.545-0.187-0.635-0.46-0.089-0.276 0.008-0.576 0.243-0.747l14.695-10.667c0.235-0.168 0.549-0.168 0.784 0l14.595 10.593c0.236 0.105 0.401 0.339 0.401 0.612 0 0.369-0.299 0.668-0.667 0.668zM3.345 10.667h25.281l-12.64-9.176-12.641 9.176zM30.653 32h-29.333c-0.368 0-0.667-0.3-0.667-0.667v-2.667c0-0.367 0.299-0.667 0.667-0.667h29.333c0.367 0 0.667 0.3 0.667 0.667v2.667c0 0.367-0.299 0.667-0.667 0.667z"/></svg>
+                </div>
+                <h3>Le Libéralisme</h3>
+                <p>Notre parti est authentiquement humaniste, fondé sur la liberté et la démocratie, privilégiant l'intérêt général. Nous travaillons dans l'intérêt de tous.</p>
+            </a>
+
+            <a href="#" class="blue-card">
+                <div class="blue-icon">
+                    <svg viewBox="0 0 32 32"><path d="M19.333 26.667h-6.667c-0.367 0-0.667-0.3-0.667-0.667v-6c0-0.367 0.3-0.667 0.667-0.667s0.667 0.3 0.667 0.667v5.333h5.333v-5.333c0-0.367 0.3-0.667 0.667-0.667s0.667 0.3 0.667 0.667v6c0 0.367-0.3 0.667-0.667 0.667zM16 30c-2.205 0-4-1.797-4-4 0-0.367 0.3-0.667 0.667-0.667s0.667 0.3 0.667 0.667c0 1.472 1.195 2.667 2.667 2.667s2.667-1.195 2.667-2.667c0-0.367 0.3-0.667 0.667-0.667s0.667 0.3 0.667 0.667c0 2.203-1.795 4-4 4z"/></svg>
+                </div>
+                <h3>Notre projet</h3>
+                <p>Le projet libéral s'adresse à toutes celles et à tous ceux qui veulent être les acteurs de leur vie et qui choisissent la solidarité.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION ACTUALITÉS
+         ============================================ -->
+    <section class="section-actu">
+        <div class="section-header">
+            <h2 class="section-title">Actualités</h2>
+        </div>
+
+        <div class="masonry-container">
+            <div class="masonry-grid">
+                <!-- Article principal -->
+                <article class="article-card featured">
+                    <div class="article-image">
+                        <img src="https://www.mr.be/wp-content/uploads/2026/01/Capture-d'écran-2026-01-08-à-11.34.52.png" alt="">
+                        <div class="article-categories">
+                            <span class="cat-tag blue">A la Une</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Vœux du MR à Liège : « Les vrais libéraux sont ici ce soir »</h3>
+                        <p class="article-excerpt">Les militants libéraux liégeois étaient nombreux ce 8 janvier 2026 au Palais des Congrès pour le traditionnel échange de vœux de la fédération provinciale MR de Liège...</p>
+                        <div class="article-meta">
+                            <div class="article-avatar">
+                                <img src="https://secure.gravatar.com/avatar/cf854708571bb72cf51c6d53adb8f7c7846588bf6e6e14d5b8f1d44aa721e049?s=140&d=mm&r=g" alt="">
+                            </div>
+                            <div>
+                                <div class="article-author-name">Martine Dupont</div>
+                                <div class="article-date">08/01/2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://www.mr.be/wp-content/uploads/2026/01/55025097184_44e8b2990a_o-1024x683.jpeg" alt="">
+                        <div class="article-categories">
+                            <span class="cat-tag blue">A la Une</span>
+                            <span class="cat-tag white">Digital</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Le MR trace la voie avec 70 propositions concrètes pour une Belgique leader en intelligence artificielle</h3>
+                        <div class="article-meta">
+                            <div class="article-avatar">
+                                <img src="https://secure.gravatar.com/avatar/3fa55727cd94322ed9053f68942a6720ed728cb6920ddb0285fe07eced0db965?s=140&d=mm&r=g" alt="">
+                            </div>
+                            <div>
+                                <div class="article-author-name">Rédaction</div>
+                                <div class="article-date">07/01/2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://www.mr.be/wp-content/uploads/2026/01/Bouchez-liege.jpg" alt="">
+                        <div class="article-categories">
+                            <span class="cat-tag blue">A la Une</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Discours de Georges-Louis Bouchez aux vœux du MR à Liège</h3>
+                        <div class="article-meta">
+                            <div class="article-avatar">
+                                <img src="https://secure.gravatar.com/avatar/3fa55727cd94322ed9053f68942a6720ed728cb6920ddb0285fe07eced0db965?s=140&d=mm&r=g" alt="">
+                            </div>
+                            <div>
+                                <div class="article-author-name">Rédaction</div>
+                                <div class="article-date">08/01/2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://www.mr.be/wp-content/uploads/2026/01/bihet-liege.png" alt="">
+                        <div class="article-categories">
+                            <span class="cat-tag blue">A la Une</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Mathieu Bihet : "Le MR est chez lui à Liège. On dit ce qu'on fait et on fait ce qu'on dit"</h3>
+                        <div class="article-meta">
+                            <div class="article-avatar">
+                                <img src="https://secure.gravatar.com/avatar/3fa55727cd94322ed9053f68942a6720ed728cb6920ddb0285fe07eced0db965?s=140&d=mm&r=g" alt="">
+                            </div>
+                            <div>
+                                <div class="article-author-name">Rédaction</div>
+                                <div class="article-date">08/01/2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600" alt="">
+                        <div class="article-categories">
+                            <span class="cat-tag blue">Économie</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Réforme fiscale : les 10 mesures phares de notre plan économique</h3>
+                        <div class="article-meta">
+                            <div class="article-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                            </div>
+                            <div>
+                                <div class="article-author-name">Marc Janssen</div>
+                                <div class="article-date">06/01/2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION AGENDA
+         ============================================ -->
+    <section class="section-agenda">
+        <div class="section-header">
+            <h2 class="section-title">Agenda</h2>
+        </div>
+
+        <div class="agenda-grid">
+            <article class="event-card">
+                <div class="event-image">
+                    <img src="https://www.mr.be/wp-content/uploads/2026/01/Conference-ce-qui-change-pour-vous-developpement-economique-simonet-474x324.jpg" alt="">
+                    <div class="event-date-badge">
+                        <div class="event-day">14</div>
+                        <div class="event-month">janvier</div>
+                        <div class="event-year">2026</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Ce qui change pour vous – Développement économique – Molenbeek-Saint-Jean</h3>
+                    <div class="event-location">
+                        <strong>After Game</strong>
+                        Rue Charles Malis 1 à 1080 Molenbeek-Saint-Jean
+                    </div>
+                </div>
+            </article>
+
+            <article class="event-card">
+                <div class="event-image">
+                    <img src="https://www.mr.be/wp-content/uploads/2026/01/CONF26-site-474x324.jpg" alt="">
+                    <div class="event-date-badge">
+                        <div class="event-day">19</div>
+                        <div class="event-month">janvier</div>
+                        <div class="event-year">2026</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Ce qui change pour vous – Enseignement de qualité – Marbaix-La-Tour</h3>
+                    <div class="event-location">
+                        <strong>Salle Jean Thibault</strong>
+                        Place Gendebien 8 Marbaix-la-Tour 6120
+                    </div>
+                </div>
+            </article>
+
+            <article class="event-card">
+                <div class="event-image">
+                    <img src="https://www.mr.be/wp-content/uploads/2026/01/CONF26-site-474x324.jpg" alt="">
+                    <div class="event-date-badge">
+                        <div class="event-day">26</div>
+                        <div class="event-month">janvier</div>
+                        <div class="event-year">2026</div>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Ce qui change pour vous – Emploi – Couvin</h3>
+                    <div class="event-location">
+                        <strong>Couvidôme</strong>
+                        Rue de la Foulerie 12 à 5660 Couvin
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA
+         ============================================ -->
+    <section class="section-cta">
+        <div class="cta-inner">
+            <h2 class="cta-title">Rejoignez le mouvement</h2>
+            <p class="cta-text">Ensemble, construisons une Belgique plus libre, plus juste et plus prospère. Votre engagement fait la différence.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-cta btn-cta-white">Adhérer maintenant</a>
+                <a href="#" class="btn-cta btn-cta-outline">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="https://www.mr.be/wp-content/uploads/2023/09/Logonew-retina.png" alt="MR">
+                    <p class="footer-desc">Le Mouvement Réformateur rassemble tous ceux qui veulent une Belgique plus libre, plus responsable et plus solidaire. Fier d'être libéral.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Mouvement</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Le Président</a></li>
+                        <li><a href="#">Libéralisme</a></li>
+                        <li><a href="#">Ministres</a></li>
+                        <li><a href="#">Élus</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Actu</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Communiqués</a></li>
+                        <li><a href="#">Dans les médias</a></li>
+                        <li><a href="#">Discours</a></li>
+                        <li><a href="#">Agenda</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Nous contacter</a></li>
+                        <li><a href="#">Adhésion</a></li>
+                        <li><a href="#">Espace membre</a></li>
+                        <li><a href="#">Shop</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 MR - Mouvement Réformateur. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+    // Header scroll
+    const header = document.getElementById('header-outer');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.remove('transparent');
+            header.classList.add('scrolled');
+        } else {
+            header.classList.add('transparent');
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Slider
+    const slides = document.querySelectorAll('.slide');
+    const controls = document.querySelectorAll('.control-item');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function goToSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        controls[currentSlide].classList.remove('active');
+        
+        currentSlide = index;
+        
+        slides[currentSlide].classList.add('active');
+        controls[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        goToSlide(next);
+    }
+
+    function startSlider() {
+        slideInterval = setInterval(nextSlide, 8000);
+    }
+
+    function stopSlider() {
+        clearInterval(slideInterval);
+    }
+
+    controls.forEach((control, index) => {
+        control.addEventListener('click', () => {
+            stopSlider();
+            goToSlide(index);
+            startSlider();
+        });
+    });
+
+    startSlider();
+
+    // Mobile menu
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    mobileToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+    </script>
+
+</body>
+</html>
